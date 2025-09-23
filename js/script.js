@@ -3,14 +3,14 @@ const closeBtn = document.getElementById("close-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileOverlay = document.getElementById("mobile-overlay"); // Obtener el nuevo overlay
 
-// Función para abrir el menú
+// Funcion para abrir el menu
 const openMobileMenu = () => {
     mobileMenu.classList.remove("-translate-x-full");
     mobileMenu.classList.add("translate-x-0");
     mobileOverlay.classList.remove("hidden"); // Mostrar el overlay
 };
 
-// Función para cerrar el menú
+// Funcion para cerrar el menu
 const closeMobileMenu = () => {
     mobileMenu.classList.remove("translate-x-0");
     mobileMenu.classList.add("-translate-x-full");
@@ -24,11 +24,11 @@ document.addEventListener("click", (event) => {
     const isClickInsideMenu = mobileMenu.contains(event.target);
     const isClickOnMenuButton = menuBtn.contains(event.target);
 
-    // Si el clic no fue dentro del menú, ni en el X, y el menú está abierto
+    // Si el clic no fue dentro del menu, ni en el X, y el menu está abierto
     if (!isClickInsideMenu && !isClickOnMenuButton && mobileMenu.classList.contains("translate-x-0")) {
-        closeMobileMenu(); // Cerrar el menú
+        closeMobileMenu(); // Cerrar el menu
     }
 });
 
-// Cerrar el menú si se hace clic directamente en el overlay
+// Cerrar el menu si se hace clic directamente en el overlay
 mobileOverlay.addEventListener("click", closeMobileMenu);
