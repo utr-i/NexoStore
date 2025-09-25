@@ -32,3 +32,18 @@ document.addEventListener("click", (event) => {
 
 // Cerrar el menu si se hace clic directamente en el overlay
 mobileOverlay.addEventListener("click", closeMobileMenu);
+
+/// Carrusel funciones
+
+var swiper = new Swiper(".mySwiper", {
+slidesPerView: 3,
+spaceBetween: 20,
+navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+},
+breakpoints: {
+    640: { slidesPerView: 1 },
+    1024: { slidesPerView: 3 }
+}
+});
