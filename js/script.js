@@ -36,6 +36,31 @@ document.addEventListener("click", (event) => {
 /* Cerrar el menu si se hace click directamente en el overlay */
 mobileOverlay.addEventListener("click", closeMobileMenu);
 
+
+/* Boton top scroll */
+
+  const btnSubir = document.getElementById("btnSubir");
+
+  // Mostrar botón cuando se baja un poco
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btnSubir.classList.remove("hidden");
+      btnSubir.classList.add("flex");
+    } else {
+      btnSubir.classList.remove("flex");
+      btnSubir.classList.add("hidden");
+    }
+  });
+
+  // Volver arriba con animación suave
+  btnSubir.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+
 /* Inicializar Swiper para el carrusel de productos destacados */
 document.addEventListener('DOMContentLoaded', function() {
   const swiper = new Swiper('.featured-carousel', {
