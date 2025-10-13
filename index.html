@@ -74,11 +74,11 @@
   <nav class="bg-gray-800 text-white border-t border-gray-700 hidden md:block">
     <div class="container mx-auto px-4">
       <ul class="flex justify-center items-center space-x-8 py-4">
-        <li class="px-2 font-bold text-lg uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Todos los productos</li>
-        <li class="px-2 font-bold text-lg uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Notebooks</li>
-        <li class="px-2 font-bold text-lg uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Monitores</li>
-        <li class="px-2 font-bold text-lg uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">PC Ensambladas</li>
-        <li class="px-2 font-bold text-lg uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Personalizar mi PC</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Todos los productos</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Notebooks</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Monitores</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">PC Ensambladas</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Personalizar mi PC</li>
       </ul>
     </div>
   </nav>
@@ -116,31 +116,25 @@
   </div>
 
   <main>
-    <!-- Imagenes Categorias -->
-  <section class="container mx-auto px-4 py-10">
-    <!-- Grid de imágenes -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
+  <!-- Imagenes Categorias -->
+  <section class="w-full flex justify-center py-10 bg-gray-100">
+    <div class="flex flex-col md:flex-row md:gap-[6px]">
+      
       <!-- Tarjeta 1 -->
-      <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200">
-        <div class="overflow-hidden">
-          <img src="./img/assets/categorias/notebook.png" alt="Notebook" class="w-full h-auto object-cover transform transition duration-500 hover:scale-110">
-        </div>
+      <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200 w-80 md:w-96">
+        <img src="./img/assets/categorias/notebook.png" alt="Notebook" class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
       </a>
 
       <!-- Tarjeta 2 -->
-      <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200">
-        <div class="overflow-hidden">
-          <img src="./img/assets/categorias/monitores.png" alt="PC Gamer" class="w-full h-auto object-cover transform transition duration-500 hover:scale-110">
-        </div>
+      <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200 w-80 md:w-96">
+        <img src="./img/assets/categorias/monitores.png" alt="Monitores" class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
       </a>
 
       <!-- Tarjeta 3 -->
-      <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200">
-        <div class="overflow-hidden">
-          <img src="./img/assets/categorias/pcensamblada.png" alt="Monitor" class="w-full h-auto object-cover transform transition duration-500 hover:scale-110">
-        </div>
+      <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200 w-80 md:w-96">
+        <img src="./img/assets/categorias/pcensamblada.png" alt="PC Gamer" class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
       </a>
+
     </div>
   </section>
 
@@ -151,7 +145,7 @@
 
         <picture>
           <!-- Imagen para mobile -->
-          <source media="(max-width: 640px)" srcset="./img/banner-mobile.png">
+          <source media="(max-width: 640px)" srcset="./img/assets/banners/banner-mobile.png">
 
           <!-- Banner Desktop -->
           <img src="./img/assets/banners/ZOWIE-banner.png" alt="Banner" class="w-full h-auto max-h-[500px] object-cover bg-black">
@@ -176,7 +170,7 @@
             <div class="swiper-slide">
               <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/MonitorAsus.webp" alt="Monitor Asus TUF gaming" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/computadoras/MonitorAsus.webp" alt="Monitor Asus TUF gaming" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="p-6 flex-grow">
                   <h3 class="text-lg font-semibold text-gray-800 mb-2">Monitor Asus TUF 24' 180hz</h3>
@@ -194,7 +188,7 @@
             <div class="swiper-slide">
               <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/MonitorGigabyte.webp" alt="Monitor Gigabyte gaming" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/computadoras/MonitorGigabyte.webp" alt="Monitor Gigabyte gaming" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="p-6 flex-grow">
                   <h3 class="text-lg font-semibold text-gray-800 mb-2">Monitor Gamer Gigabyte 25" 200Hz</h3>
@@ -211,7 +205,7 @@
             <div class="swiper-slide">
               <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/NotebookAcer.webp" alt="Notebook Acer"" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/computadoras/NotebookAcer.webp" alt="Notebook Acer"" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="p-6 flex-grow">
                   <h3 class="text-lg font-semibold text-gray-800 mb-2">Notebook Acer Aspire 3 i5</h3>
@@ -228,7 +222,7 @@
             <div class="swiper-slide">
               <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/NotebookAsus.webp" alt="Notebook Gamer Asus TUF" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/computadoras/NotebookAsus.webp" alt="Notebook Gamer Asus TUF" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="p-6 flex-grow">
                   <h3 class="text-lg font-semibold text-gray-800 mb-2">Notebook Gamer Asus TUF</h3>
@@ -246,7 +240,7 @@
             <div class="swiper-slide">
               <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/NotebookLenovo.webp" alt="Notebook Lenovo LOQ" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/computadoras/NotebookLenovo.webp" alt="Notebook Lenovo LOQ" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="p-6 flex-grow">
                   <h3 class="text-lg font-semibold text-gray-800 mb-2">Notebook Gamer Lenovo LOQ 15"</h3>
@@ -259,11 +253,11 @@
               </div>
             </div>
 
-            <!-- Producto 6: Auriculares -->
+            <!-- Producto 6: Pc ensamblada -->
             <div class="swiper-slide">
               <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/pcensamblada.webp" alt="PC ensamblada" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/computadoras/pcensamblada.webp" alt="PC ensamblada" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="p-6 flex-grow">
                   <h3 class="text-lg font-semibold text-gray-800 mb-2">PC Gamer Ensamblada Nexo - Máximo FPS</h3>
