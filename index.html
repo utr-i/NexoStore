@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NEXO - Componentes de PC y Perifericos</title>
   <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <link rel="shortcut icon" href="./img/assets/logos/favicon.ico"/>
+  <link rel="shortcut icon" href="./img/assets/logos/favicon.ico" />
   <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body class="bg-gray-100">
 
-    <!-- Banner superior -->
-  <div class="bg-violet-800 text-white text-xs sm:text-sm py-2">
-    <div class="container mx-auto flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 text-center md:text-left">
+  <!-- Banner superior -->
+  <section class="bg-violet-800 text-white text-xs sm:text-sm py-2">
+    <div
+      class="container mx-auto flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 text-center md:text-left">
       <span>6 Cuotas sin interés 💳 // Envios a todo el Pais🚗 // 20% de Descuento pagando con transferencia 📲</span>
     </div>
-  </div>
+  </section>
 
   <!-- Header -->
   <header class="bg-gray-800 shadow-sm py-4 px-4 md:px-[100px]">
     <div class="flex items-center justify-between gap-4">
-      
+
       <!-- Logo  -->
       <a href="#" class="flex-shrink-0">
         <img src="./img/assets/logos/logo.png" alt="logo" class="h-[40px] md:h-[70px]">
@@ -32,8 +36,7 @@
       <!-- Barra de busqueda  -->
       <div class="flex-1 max-w-xl mx-6">
         <div class="relative">
-          <input type="text" placeholder="¿Qué estás buscando?" 
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg text-black 
+          <input type="text" placeholder="¿Qué estás buscando?" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-black 
                   focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
           <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
             <i class="fas fa-search"></i>
@@ -51,7 +54,8 @@
         </a>
         <a href="#" class="hover:text-violet-500 flex items-center relative">
           <i class="fas fa-shopping-cart text-xl"></i>
-          <span class="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+          <span
+            class="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
         </a>
       </div>
 
@@ -59,8 +63,7 @@
       <div class="flex md:hidden items-center space-x-4 text-white">
         <button id="menu-btn" class="focus:outline-none">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
         <button>
@@ -74,11 +77,16 @@
   <nav class="bg-gray-800 text-white border-t border-gray-700 hidden md:block">
     <div class="container mx-auto px-4">
       <ul class="flex justify-center items-center space-x-8 py-4">
-        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Todos los productos</li>
-        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Notebooks</li>
-        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Monitores</li>
-        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">PC Ensambladas</li>
-        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Personalizar mi PC</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
+          Todos los productos</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
+          Notebooks</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
+          Monitores</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">PC
+          Ensambladas</li>
+        <li class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
+          Personalizar mi PC</li>
       </ul>
     </div>
   </nav>
@@ -87,7 +95,8 @@
   <div id="mobile-overlay" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 hidden">
   </div>
 
-  <div id="mobile-menu" class="fixed inset-y-0 left-0 bg-gray-800 text-white w-3/4 max-w-xs transform -translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col h-full">
+  <div id="mobile-menu"
+    class="fixed inset-y-0 left-0 bg-gray-800 text-white w-3/4 max-w-xs transform -translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col h-full">
     <!-- Boton cerrar -->
     <div class="flex justify-end p-4">
       <button id="close-btn" class="text-white text-2xl">X</button>
@@ -116,685 +125,727 @@
   </div>
 
   <main>
-  <!-- Imagenes Categorias -->
-  <section class="w-full flex justify-center py-10 bg-gray-100">
-    <div class="flex flex-col md:flex-row md:gap-[6px]">
-      
-      <!-- Tarjeta 1 -->
-      <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200 w-80 md:w-96">
-        <img src="./img/assets/categorias/notebook.png" alt="Notebook" class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
-      </a>
+    <!-- Imagenes Categorias -->
+    <section class="w-full flex justify-center py-10 bg-gray-100">
+      <div class="flex flex-col md:flex-row md:gap-[6px]">
 
-      <!-- Tarjeta 2 -->
-      <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200 w-80 md:w-96">
-        <img src="./img/assets/categorias/monitores.png" alt="Monitores" class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
-      </a>
+        <!-- Tarjeta 1 -->
+        <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200 w-80 md:w-96">
+          <img src="./img/assets/categorias/notebook.png" alt="Notebook"
+            class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
+        </a>
 
-      <!-- Tarjeta 3 -->
-      <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200 w-80 md:w-96">
-        <img src="./img/assets/categorias/pcensamblada.png" alt="PC Gamer" class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
-      </a>
+        <!-- Tarjeta 2 -->
+        <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200 w-80 md:w-96">
+          <img src="./img/assets/categorias/monitores.png" alt="Monitores"
+            class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
+        </a>
 
-    </div>
-  </section>
+        <!-- Tarjeta 3 -->
+        <a href="#" class="block rounded-3xl shadow-lg overflow-hidden border-4 border-gray-200 w-80 md:w-96">
+          <img src="./img/assets/categorias/pcensamblada.png" alt="PC Gamer"
+            class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
+        </a>
 
-  <!-- Banner Zowie -->
-  <section class="w-full">
-    <div class="overflow-hidden rounded-2xl">
-      <a href="#" class="block transform transition duration-500 hover:scale-105 rounded-2xl shadow-lg">
+      </div>
+    </section>
 
-        <picture>
-          <!-- Imagen para mobile -->
-          <source media="(max-width: 640px)" srcset="./img/assets/banners/banner-mobile.png">
+    <!-- Banner Zowie -->
+    <section class="w-full">
+      <div class="overflow-hidden rounded-2xl">
+        <a href="#" class="block transform transition duration-500 hover:scale-105 rounded-2xl shadow-lg">
 
-          <!-- Banner Desktop -->
-          <img src="./img/assets/banners/ZOWIE-banner.png" alt="Banner" class="w-full h-auto max-h-[500px] object-cover bg-black">
-        </picture>
+          <picture>
+            <!-- Imagen para mobile -->
+            <source media="(max-width: 640px)" srcset="./img/assets/banners/banner-mobile.png">
 
-      </a>
-    </div>
-  </section>
+            <!-- Banner Desktop -->
+            <img src="./img/assets/banners/ZOWIE-banner.png" alt="Banner"
+              class="w-full h-auto max-h-[500px] object-cover bg-black">
+          </picture>
+
+        </a>
+      </div>
+    </section>
 
 
-  <!-- Seccion Carrusel de Productos Destacados -->
-  <section class="py-12 bg-gray-100 relative overflow-hidden">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Productos Destacados</h2>
-      
-      <!-- Wrapper para posicionar flechas por fuera -->
-      <div class="relative">
-        <!-- Swiper Container -->
-        <div class="swiper featured-carousel">
+    <!-- Seccion Carrusel de Productos Destacados -->
+    <section class="py-12 bg-gray-100 relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Productos Destacados</h2>
+
+        <!-- Wrapper para posicionar flechas por fuera -->
+        <div class="relative">
+          <!-- Swiper Container -->
+          <div class="swiper featured-carousel">
+            <div class="swiper-wrapper">
+              <!-- Producto 1: GPU -->
+              <div class="swiper-slide">
+                <div
+                  class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+                  <div class="overflow-hidden">
+                    <img src="./img/assets/productos/computadoras/MonitorAsus.webp" alt="Monitor Asus TUF gaming"
+                      class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <div class="p-6 flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Monitor Asus TUF 24' 180hz</h3>
+                    <p class="text-gray-600 text-sm mb-4"> Panel Fast IPS | 1ms | FreeSync Premium & G-Sync Compatible
+                    </p>
+                    <div class="flex justify-between items-center mb-4">
+                      <span class="text-2xl font-bold text-violet-600">$500.000</span>
+                      <span class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Oferta</span>
+                    </div>
+                    <a href="#"
+                      class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver
+                      más</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 2: CPU -->
+              <div class="swiper-slide">
+                <div
+                  class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+                  <div class="overflow-hidden">
+                    <img src="./img/assets/productos/computadoras/MonitorGigabyte.webp" alt="Monitor Gigabyte gaming"
+                      class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <div class="p-6 flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Monitor Gamer Gigabyte 25" 200Hz</h3>
+                    <p class="text-gray-600 text-sm mb-4">Panel Fast IPS | 1ms | FreeSync Premium & G-Sync Compatible
+                    </p>
+                    <div class="flex justify-between items-center mb-4">
+                      <span class="text-2xl font-bold text-violet-600">$450.000</span>
+                    </div>
+                    <a href="#"
+                      class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver
+                      más</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 3: Monitor -->
+              <div class="swiper-slide">
+                <div
+                  class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+                  <div class="overflow-hidden">
+                    <img src="./img/assets/productos/computadoras/NotebookAcer.webp" alt="Notebook Acer"" class=" w-full
+                      h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <div class="p-6 flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Notebook Acer Aspire 3 i5</h3>
+                    <p class="text-gray-600 text-sm mb-4">Intel Core i5 | 16GB RAM | SSD 512GB</p>
+                    <div class="flex justify-between items-center mb-4">
+                      <span class="text-2xl font-bold text-violet-600">$850.000</span>
+                    </div>
+                    <a href="#"
+                      class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver
+                      más</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 4: Teclado -->
+              <div class="swiper-slide">
+                <div
+                  class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+                  <div class="overflow-hidden">
+                    <img src="./img/assets/productos/computadoras/NotebookAsus.webp" alt="Notebook Gamer Asus TUF"
+                      class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <div class="p-6 flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Notebook Gamer Asus TUF</h3>
+                    <p class="text-gray-600 text-sm mb-4">Intel Core i7 | RTX 4060 | 144Hz FHD.</p>
+                    <div class="flex justify-between items-center mb-4">
+                      <span class="text-2xl font-bold text-violet-600">$1.250.000</span>
+                      <span class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Oferta</span>
+                    </div>
+                    <a href="#"
+                      class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver
+                      más</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 5: Mouse -->
+              <div class="swiper-slide">
+                <div
+                  class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+                  <div class="overflow-hidden">
+                    <img src="./img/assets/productos/computadoras/NotebookLenovo.webp" alt="Notebook Lenovo LOQ"
+                      class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <div class="p-6 flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Notebook Gamer Lenovo LOQ 15"</h3>
+                    <p class="text-gray-600 text-sm mb-4">Ryzen 7 / Core i7 | RTX 4050/4060 | 144Hz FHD.</p>
+                    <div class="flex justify-between items-center mb-4">
+                      <span class="text-2xl font-bold text-violet-600">$1.200.000</span>
+                    </div>
+                    <a href="#"
+                      class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver
+                      más</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 6: Pc ensamblada -->
+              <div class="swiper-slide">
+                <div
+                  class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+                  <div class="overflow-hidden">
+                    <img src="./img/assets/productos/computadoras/pcensamblada.webp" alt="PC ensamblada"
+                      class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <div class="p-6 flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">PC Gamer Ensamblada Nexo - Máximo FPS</h3>
+                    <p class="text-gray-600 text-sm mb-4">Intel Core i5 (o Ryzen 5) | RTX 4060 | 16GB DDR4/5 | SSD 1TB
+                      NVMe.</p>
+                    <div class="flex justify-between items-center mb-4">
+                      <span class="text-2xl font-bold text-violet-600">$1.500.000</span>
+                    </div>
+                    <a href="#"
+                      class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver
+                      más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- puntos pequenios abajo -->
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <!-- Flechas de Navegacion -->
+          <div
+            class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-4 text-gray-600 hover:text-violet-600 transition-all duration-300 z-30 hidden md:block !w-14 !h-14 flex items-center justify-center">
+            <i class="fas fa-chevron-left text-lg"></i>
+          </div>
+          <div
+            class="custom-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-4 text-gray-600 hover:text-violet-600 transition-all duration-300 z-30 hidden md:block !w-14 !h-14 flex items-center justify-center">
+            <i class="fas fa-chevron-right text-lg"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seccion Beneficios -->
+    <section class="bg-white py-12 my-[100px]">
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-10 text-center md:text-left">
+
+        <!-- Item 1 -->
+        <div class="flex items-center justify-center md:justify-start gap-4">
+          <i class="fas fa-credit-card text-4xl text-violet-600"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Hasta 24 cuotas</h3>
+            <p class="text-sm text-gray-600">abonando con tarjetas de crédito</p>
+          </div>
+        </div>
+
+        <!-- Separador -->
+        <div class="hidden md:block w-px h-10 bg-gray-300"></div>
+
+        <!-- Item 2 -->
+        <div class="flex items-center justify-center md:justify-start gap-4">
+          <i class="fas fa-truck text-4xl text-violet-600"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Envíos a todo el país</h3>
+            <p class="text-sm text-gray-600">a través de OCA</p>
+          </div>
+        </div>
+
+        <!-- Separador -->
+        <div class="hidden md:block w-px h-10 bg-gray-300"></div>
+
+        <!-- Item 3 -->
+        <div class="flex items-center justify-center md:justify-start gap-4">
+          <i class="fas fa-shield-alt text-4xl text-violet-600"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Garantía oficial</h3>
+            <p class="text-sm text-gray-600">de hasta 36 meses en todos los productos</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- Nuevos Ingresos -->
+    <section class="bg-gray-100 py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3"> NUEVOS INGRESOS
+          <span class="flex-1 h-[2px] bg-violet-800"></span>
+        </h2>
+
+        <div class="swiper new-products">
           <div class="swiper-wrapper">
-            <!-- Producto 1: GPU -->
-            <div class="swiper-slide">
-              <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+
+            <div
+              class="swiper-slide bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-shadow">
+              <a href="/producto/water-cooler-deepcool-le360" class="block group">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/MonitorAsus.webp" alt="Monitor Asus TUF gaming" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/componentes/water-cooler.png" alt="Water Cooler Aio Deepcool LE360"
+                    class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
                 </div>
-                <div class="p-6 flex-grow">
-                  <h3 class="text-lg font-semibold text-gray-800 mb-2">Monitor Asus TUF 24' 180hz</h3>
-                  <p class="text-gray-600 text-sm mb-4"> Panel Fast IPS | 1ms | FreeSync Premium & G-Sync Compatible</p>
-                  <div class="flex justify-between items-center mb-4">
-                    <span class="text-2xl font-bold text-violet-600">$500.000</span>
-                    <span class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Oferta</span>
-                  </div>
-                  <a href="#" class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver más</a>
+                <div class="p-4">
+                  <h3 class="text-sm font-semibold text-gray-700">Water Cooler Aio Deepcool LE360</h3>
+                  <p class="text-gray-500 text-xs mb-2">V2 Argb 360mm Black</p>
+                  <span class="text-lg font-bold text-violet-600">$140.600</span>
                 </div>
-              </div>
+              </a>
             </div>
 
-            <!-- Producto 2: CPU -->
-            <div class="swiper-slide">
-              <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+            <div
+              class="swiper-slide bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-shadow">
+              <a href="/producto/motherboard-asus-prime-a520m-k" class="block group">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/MonitorGigabyte.webp" alt="Monitor Gigabyte gaming" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/componentes/Motherboard Asus Prime.png"
+                    alt="Motherboard Asus Prime A520M-K"
+                    class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
                 </div>
-                <div class="p-6 flex-grow">
-                  <h3 class="text-lg font-semibold text-gray-800 mb-2">Monitor Gamer Gigabyte 25" 200Hz</h3>
-                  <p class="text-gray-600 text-sm mb-4">Panel Fast IPS | 1ms | FreeSync Premium & G-Sync Compatible</p>
-                  <div class="flex justify-between items-center mb-4">
-                    <span class="text-2xl font-bold text-violet-600">$450.000</span>
-                  </div>
-                  <a href="#" class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver más</a>
+                <div class="p-4">
+                  <h3 class="text-sm font-semibold text-gray-700">Motherboard Asus Prime A520M-K</h3>
+                  <p class="text-gray-500 text-xs mb-2">Csm AM4</p>
+                  <span class="text-lg font-bold text-violet-600">$86.600</span>
                 </div>
-              </div>
+              </a>
             </div>
 
-            <!-- Producto 3: Monitor -->
-            <div class="swiper-slide">
-              <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+            <div
+              class="swiper-slide bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-shadow">
+              <a href="/producto/funda-protector-nintendo-switch" class="block group">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/NotebookAcer.webp" alt="Notebook Acer"" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/consolas/Funda Protector Nintendo Switch Case + Protector NSW2.png"
+                    alt="Funda Protector Nintendo Switch Case + Protector NSW2"
+                    class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
                 </div>
-                <div class="p-6 flex-grow">
-                  <h3 class="text-lg font-semibold text-gray-800 mb-2">Notebook Acer Aspire 3 i5</h3>
-                  <p class="text-gray-600 text-sm mb-4">Intel Core i5 | 16GB RAM | SSD 512GB</p>
-                  <div class="flex justify-between items-center mb-4">
-                    <span class="text-2xl font-bold text-violet-600">$850.000</span>
-                  </div>
-                  <a href="#" class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver más</a>
+                <div class="p-4">
+                  <h3 class="text-sm font-semibold text-gray-700">Funda Protector Nintendo Switch</h3>
+                  <p class="text-gray-500 text-xs mb-2">Case + Protector NSW2</p>
+                  <span class="text-lg font-bold text-violet-600">$130.500</span>
                 </div>
-              </div>
+              </a>
             </div>
 
-            <!-- Producto 4: Teclado -->
-            <div class="swiper-slide">
-              <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
+            <div
+              class="swiper-slide bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-shadow">
+              <a href="/producto/memoria-ram-lexar-16gb-ddr5" class="block group">
                 <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/NotebookAsus.webp" alt="Notebook Gamer Asus TUF" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
+                  <img src="./img/assets/productos/componentes/Memoria RAM Lexar 16GB 5600Mhz.png"
+                    alt="Memoria RAM Lexar 16GB 5600Mhz"
+                    class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
                 </div>
-                <div class="p-6 flex-grow">
-                  <h3 class="text-lg font-semibold text-gray-800 mb-2">Notebook Gamer Asus TUF</h3>
-                  <p class="text-gray-600 text-sm mb-4">Intel Core i7 | RTX 4060 | 144Hz FHD.</p>
-                  <div class="flex justify-between items-center mb-4">
-                    <span class="text-2xl font-bold text-violet-600">$1.250.000</span>
-                    <span class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Oferta</span>
-                  </div>
-                  <a href="#" class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver más</a>
+                <div class="p-4">
+                  <h3 class="text-sm font-semibold text-gray-700">Memoria RAM Lexar 16GB 5600Mhz</h3>
+                  <p class="text-gray-500 text-xs mb-2">DDR5 CL46 Black</p>
+                  <span class="text-lg font-bold text-violet-600">$69.600</span>
                 </div>
-              </div>
-            </div>
-
-            <!-- Producto 5: Mouse -->
-            <div class="swiper-slide">
-              <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
-                <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/NotebookLenovo.webp" alt="Notebook Lenovo LOQ" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-6 flex-grow">
-                  <h3 class="text-lg font-semibold text-gray-800 mb-2">Notebook Gamer Lenovo LOQ 15"</h3>
-                  <p class="text-gray-600 text-sm mb-4">Ryzen 7 / Core i7 | RTX 4050/4060 | 144Hz FHD.</p>
-                  <div class="flex justify-between items-center mb-4">
-                    <span class="text-2xl font-bold text-violet-600">$1.200.000</span>
-                  </div>
-                  <a href="#" class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver más</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Producto 6: Pc ensamblada -->
-            <div class="swiper-slide">
-              <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 min-h-[450px]">
-                <div class="overflow-hidden">
-                  <img src="./img/assets/productos/computadoras/pcensamblada.webp" alt="PC ensamblada" class="w-full h-72 object-contain hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-6 flex-grow">
-                  <h3 class="text-lg font-semibold text-gray-800 mb-2">PC Gamer Ensamblada Nexo - Máximo FPS</h3>
-                  <p class="text-gray-600 text-sm mb-4">Intel Core i5 (o Ryzen 5) | RTX 4060 | 16GB DDR4/5 | SSD 1TB NVMe.</p>
-                  <div class="flex justify-between items-center mb-4">
-                    <span class="text-2xl font-bold text-violet-600">$1.500.000</span>
-                  </div>
-                  <a href="#" class="w-full block bg-violet-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-violet-700 transition-colors">Ver más</a>
-                </div>
-              </div>
+              </a>
             </div>
           </div>
-          
-          <!-- puntos pequenios abajo -->
-          <div class="swiper-pagination"></div>
-        </div>
-        
-        <!-- Flechas de Navegacion -->
-        <div class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-4 text-gray-600 hover:text-violet-600 transition-all duration-300 z-30 hidden md:block !w-14 !h-14 flex items-center justify-center">
-          <i class="fas fa-chevron-left text-lg"></i>
-        </div>
-        <div class="custom-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-4 text-gray-600 hover:text-violet-600 transition-all duration-300 z-30 hidden md:block !w-14 !h-14 flex items-center justify-center">
-          <i class="fas fa-chevron-right text-lg"></i>
+
+          <div class="swiper-button-next text-violet-600"></div>
+          <div class="swiper-button-prev text-violet-600"></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Seccion Beneficios -->
-  <section class="bg-white py-12 my-[100px]">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-10 text-center md:text-left">
-      
-      <!-- Item 1 -->
-      <div class="flex items-center justify-center md:justify-start gap-4">
-        <i class="fas fa-credit-card text-4xl text-violet-600"></i>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-800">Hasta 24 cuotas</h3>
-          <p class="text-sm text-gray-600">abonando con tarjetas de crédito</p>
-        </div>
-      </div>
-
-      <!-- Separador -->
-      <div class="hidden md:block w-px h-10 bg-gray-300"></div>
-
-      <!-- Item 2 -->
-      <div class="flex items-center justify-center md:justify-start gap-4">
-        <i class="fas fa-truck text-4xl text-violet-600"></i>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-800">Envíos a todo el país</h3>
-          <p class="text-sm text-gray-600">a través de OCA</p>
-        </div>
-      </div>
-
-      <!-- Separador -->
-      <div class="hidden md:block w-px h-10 bg-gray-300"></div>
-
-      <!-- Item 3 -->
-      <div class="flex items-center justify-center md:justify-start gap-4">
-        <i class="fas fa-shield-alt text-4xl text-violet-600"></i>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-800">Garantía oficial</h3>
-          <p class="text-sm text-gray-600">de hasta 36 meses en todos los productos</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
+    </section>
 
 
+    <!-- Marcas -->
+    <section class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
+          Descubrí las mejores marcas
+        </h2>
 
-  <!-- Nuevos Ingresos -->
-<section class="bg-gray-100 py-16">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3"> NUEVOS INGRESOS
-      <span class="flex-1 h-[2px] bg-violet-800"></span>
-    </h2>
+        <div id="brand-filters" class="flex gap-3 mb-10 overflow-x-auto pb-2">
+          <button data-brand="steelseries"
+            class="brand-button border border-gray-300 rounded-lg p-2 flex-shrink-0 transition duration-200 focus:outline-none focus:ring-2 focus:ring-violet-600 bg-violet-600 text-white shadow-md">
+            <img src="./img/assets/logos/01_logo_SS_horizontalblack_SteelSeries_41GJgS.svg" alt="SteelSeries Logo"
+              class="h-6 filter brightness-0 invert">
+          </button>
 
-    <div class="swiper new-products">
-      <div class="swiper-wrapper">
-        
-        <div class="swiper-slide bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-shadow">
-          <a href="/producto/water-cooler-deepcool-le360" class="block group">
-            <div class="overflow-hidden">
-              <img 
-                src="./img/assets/productos/componentes/water-cooler.png" 
-                alt="Water Cooler Aio Deepcool LE360" 
-                class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105"
-              >
-            </div>
-            <div class="p-4">
-              <h3 class="text-sm font-semibold text-gray-700">Water Cooler Aio Deepcool LE360</h3>
-              <p class="text-gray-500 text-xs mb-2">V2 Argb 360mm Black</p>
-              <span class="text-lg font-bold text-violet-600">$140.600</span>
-            </div>
-          </a>
+          <button data-brand="logitech"
+            class="brand-button border border-gray-300 rounded-lg p-2 flex-shrink-0 hover:border-violet-600 transition duration-200 focus:outline-none focus:ring-2 focus:violet-600">
+            <img src="./img/assets/logos/logitech logo black_Logitech_YD2gnj.svg" alt="Logitech Logo" class="h-6">
+          </button>
+
+          <button data-brand="asus"
+            class="brand-button border border-gray-300 rounded-lg p-2 flex-shrink-0 hover:border-violet-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-violet-600">
+            <img src="./img/assets/logos/asus logo black_Asus_zmLf3E.svg" alt="ASUS Logo" class="h-6">
+          </button>
+
         </div>
 
-        <div class="swiper-slide bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-shadow">
-          <a href="/producto/motherboard-asus-prime-a520m-k" class="block group">
-            <div class="overflow-hidden">
-              <img 
-                src="./img/assets/productos/componentes/Motherboard Asus Prime.png" 
-                alt="Motherboard Asus Prime A520M-K" 
-                class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105"
-              >
-            </div>
-            <div class="p-4">
-              <h3 class="text-sm font-semibold text-gray-700">Motherboard Asus Prime A520M-K</h3>
-              <p class="text-gray-500 text-xs mb-2">Csm AM4</p>
-              <span class="text-lg font-bold text-violet-600">$86.600</span>
-            </div>
-          </a>
-        </div>
+        <div class="flex flex-col lg:flex-row gap-6">
 
-        <div class="swiper-slide bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-shadow">
-          <a href="/producto/funda-protector-nintendo-switch" class="block group">
-            <div class="overflow-hidden">
-              <img 
-                src="./img/assets/productos/consolas/Funda Protector Nintendo Switch Case + Protector NSW2.png" 
-                alt="Funda Protector Nintendo Switch Case + Protector NSW2" 
-                class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105"
-              >
-            </div>
-            <div class="p-4">
-              <h3 class="text-sm font-semibold text-gray-700">Funda Protector Nintendo Switch</h3>
-              <p class="text-gray-500 text-xs mb-2">Case + Protector NSW2</p>
-              <span class="text-lg font-bold text-violet-600">$130.500</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="swiper-slide bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-shadow">
-          <a href="/producto/memoria-ram-lexar-16gb-ddr5" class="block group">
-            <div class="overflow-hidden">
-              <img 
-                src="./img/assets/productos/componentes/Memoria RAM Lexar 16GB 5600Mhz.png" 
-                alt="Memoria RAM Lexar 16GB 5600Mhz" 
-                class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105"
-              >
-            </div>
-            <div class="p-4">
-              <h3 class="text-sm font-semibold text-gray-700">Memoria RAM Lexar 16GB 5600Mhz</h3>
-              <p class="text-gray-500 text-xs mb-2">DDR5 CL46 Black</p>
-              <span class="text-lg font-bold text-violet-600">$69.600</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="swiper-button-next text-violet-600"></div>
-      <div class="swiper-button-prev text-violet-600"></div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Marcas -->
-  <section class="bg-white py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
-        Descubrí las mejores marcas
-      </h2>
-
-      <div id="brand-filters" class="flex gap-3 mb-10 overflow-x-auto pb-2">
-        <button 
-          data-brand="steelseries" 
-          class="brand-button border border-gray-300 rounded-lg p-2 flex-shrink-0 transition duration-200 focus:outline-none focus:ring-2 focus:ring-violet-600 bg-violet-600 text-white shadow-md"
-        >
-          <img src="./img/assets/logos/01_logo_SS_horizontalblack_SteelSeries_41GJgS.svg" alt="SteelSeries Logo" class="h-6 filter brightness-0 invert">
-        </button>
-
-        <button 
-          data-brand="logitech" 
-          class="brand-button border border-gray-300 rounded-lg p-2 flex-shrink-0 hover:border-violet-600 transition duration-200 focus:outline-none focus:ring-2 focus:violet-600"
-        >
-          <img src="./img/assets/logos/logitech logo black_Logitech_YD2gnj.svg" alt="Logitech Logo" class="h-6">
-        </button>
-
-        <button 
-          data-brand="asus" 
-          class="brand-button border border-gray-300 rounded-lg p-2 flex-shrink-0 hover:border-violet-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-violet-600"
-        >
-          <img src="./img/assets/logos/asus logo black_Asus_zmLf3E.svg" alt="ASUS Logo" class="h-6">
-        </button>
-        
-        </div>
-
-      <div class="flex flex-col lg:flex-row gap-6">
-
-        <div id="brand-promo" class="w-full lg:w-1/3 h-[500px] overflow-hidden rounded-xl shadow-lg relative transition-all duration-300">
-          <img 
-            src="./img/assets/promo/steelseries-promo.jpg" 
-            alt="SteelSeries Periféricos" 
-            class="w-full h-full object-cover"
-          >
-          <div class="absolute bottom-4 left-4 text-white text-3xl font-extrabold" id="promo-title">
-            STEELSERIES
-          </div>
-        </div>
-        
-        <div class="w-full lg:w-2/3">
-          <div class="swiper brand-products h-[500px]"> 
-            <!-- Contenedor de productos -->
-        <div class="swiper-wrapper h-full" id="products-container">
-
-          <!-- Teclado Apex 5 -->
-          <div class="swiper-slide product-card h-full" data-brand="steelseries">
-            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
-              <img src="./img/assets/productos/perifericos/tecladosteelseriesapex5.jpg" alt="Teclado SteelSeries Apex 5" class="w-full h-40 object-contain mx-auto">
-              <div class="flex flex-col justify-between flex-grow mt-3">
-                <p class="text-sm text-gray-700 leading-snug">
-                  Teclado Mecánico SteelSeries Apex 5 — Switch Hybrid Blue RGB
-                </p>
-                <span class="text-base font-semibold text-violet-600 mt-3">$133.300</span>
-              </div>
+          <div id="brand-promo"
+            class="w-full lg:w-1/3 h-[500px] overflow-hidden rounded-xl shadow-lg relative transition-all duration-300">
+            <img src="./img/assets/promo/steelseries-promo.jpg" alt="SteelSeries Periféricos"
+              class="w-full h-full object-cover">
+            <div class="absolute bottom-4 left-4 text-white text-3xl font-extrabold" id="promo-title">
+              STEELSERIES
             </div>
           </div>
 
-          <!-- Auriculares Arctis Nova 7P -->
-          <div class="swiper-slide product-card h-full" data-brand="steelseries">
-            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
-              <img src="./img/assets/productos/perifericos/auricularessteelseriesnova7p.jpg" alt="Auriculares SteelSeries Arctis Nova 7P" class="w-full h-40 object-contain mx-auto">
-              <div class="flex flex-col justify-between flex-grow mt-3">
-                <p class="text-sm text-gray-700 leading-snug">
-                  Auriculares SteelSeries Arctis Nova 7P — Wireless 2.4Ghz Bluetooth Black
-                </p>
-                <span class="text-base font-semibold text-violet-600 mt-3">$358.200</span>
-              </div>
-            </div>
-          </div>
+          <div class="w-full lg:w-2/3">
+            <div class="swiper brand-products h-[500px]">
+              <!-- Contenedor de productos -->
+              <div class="swiper-wrapper h-full" id="products-container">
 
-          <!-- Teclado Apex 7 -->
-          <div class="swiper-slide product-card h-full" data-brand="steelseries">
-            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
-              <img src="./img/assets/productos/perifericos/tecladosteelseriesapex7.jpg" alt="Teclado SteelSeries Apex 7" class="w-full h-40 object-contain mx-auto">
-              <div class="flex flex-col justify-between flex-grow mt-3">
-                <p class="text-sm text-gray-700 leading-snug">
-                  Teclado Mecánico SteelSeries Apex 7 — OLED Smart Display / Switch QX2 RED RGB
-                </p>
-                <span class="text-base font-semibold text-violet-600 mt-3">$180.950</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mouse Aerox 3 Snow -->
-          <div class="swiper-slide product-card h-full" data-brand="steelseries">
-            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
-              <img src="./img/assets/productos/perifericos/mousesteelseriesaerox3.jpg" alt="Mouse SteelSeries Aerox 3 Onyx Snow" class="w-full h-40 object-contain mx-auto">
-              <div class="flex flex-col justify-between flex-grow mt-3">
-                <p class="text-sm text-gray-700 leading-snug">
-                  Mouse SteelSeries Aerox 3 Onyx Snow Wireless 2.4Ghz Bluetooth Ultra LightWeight
-                </p>
-                <span class="text-base font-semibold text-violet-600 mt-3">$110.000</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mouse Aerox 3 Ghost -->
-          <div class="swiper-slide product-card h-full" data-brand="steelseries">
-            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
-              <img src="./img/assets/productos/perifericos/mousesteelseriesaerox3onyx.jpg" alt="Mouse SteelSeries Aerox 3 Onyx Ghost" class="w-full h-40 object-contain mx-auto">
-              <div class="flex flex-col justify-between flex-grow mt-3">
-                <p class="text-sm text-gray-700 leading-snug">
-                  Mouse SteelSeries Aerox 3 Onyx Ghost Wireless 2.4Ghz Bluetooth Ultra LightWeight
-                </p>
-                <span class="text-base font-semibold text-violet-600 mt-3">$110.000</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Volante Logitech G923 -->
-          <div class="swiper-slide product-card hidden h-full" data-brand="logitech">
-            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
-              <img src="./img/assets/productos/logitech-volante-g923.png" alt="Volante Logitech G923" class="w-full h-40 object-contain mx-auto">
-              <div class="flex flex-col justify-between flex-grow mt-3">
-                <p class="text-sm text-gray-700 leading-snug">
-                  Volante Logitech G923 Trueforce Racing — Compatible con PC, Xbox Series y One
-                </p>
-                <span class="text-base font-semibold text-violet-600 mt-3">$601.150</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Palanca Logitech -->
-          <div class="swiper-slide product-card hidden h-full" data-brand="logitech">
-            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
-              <img src="./img/assets/productos/logitech-palanca.png" alt="Palanca Logitech" class="w-full h-40 object-contain mx-auto">
-              <div class="flex flex-col justify-between flex-grow mt-3">
-                <p class="text-sm text-gray-700 leading-snug">
-                  Palanca Logitech Drive Force Shifter — Compatible con G923, G29 y G920
-                </p>
-                <span class="text-base font-semibold text-violet-600 mt-3">$95.550</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Placeholder ASUS -->
-          <div class="swiper-slide product-card hidden h-full" data-brand="asus">
-            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex items-center justify-center text-center p-4">
-              <h3 class="text-gray-700 font-semibold">Productos ASUS próximamente</h3>
-            </div>
-          </div>
-
-
-              <!-- Logitech -->
-              <div class="swiper-slide product-card hidden" data-brand="logitech">
-                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
-                  <img src="./img/assets/productos/logitech-volante-g923.png" alt="Volante Logitech G923" class="w-full h-48 object-contain p-4">
-                  <div class="p-4">
-                    <h3 class="text-sm font-semibold text-gray-700">Volante Logitech G923 Trueforce Racing</h3>
-                    <p class="text-gray-500 text-xs mb-2">PC/XBOX S/X/One</p>
-                    <span class="text-lg font-bold text-violet-600">$601.150</span>
+                <!-- Steel Series -->
+                <!-- Teclado Apex 5 -->
+                <div class="swiper-slide product-card h-full" data-brand="steelseries">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
+                    <img src="./img/assets/productos/perifericos/tecladosteelseriesapex5.jpg"
+                      alt="Teclado SteelSeries Apex 5" class="w-full h-40 object-contain mx-auto">
+                    <div class="flex flex-col justify-between flex-grow mt-3">
+                      <p class="text-sm text-gray-700 leading-snug">
+                        Teclado Mecánico SteelSeries Apex 5 — Switch Hybrid Blue RGB
+                      </p>
+                      <span class="text-base font-semibold text-violet-600 mt-3">$133.300</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <div class="swiper-slide product-card hidden" data-brand="logitech">
-                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
-                  <img src="./img/assets/productos/logitech-palanca.png" alt="Palanca Logitech" class="w-full h-48 object-contain p-4">
-                  <div class="p-4">
-                    <h3 class="text-sm font-semibold text-gray-700">Palanca Logitech Drive Force Shifter</h3>
-                    <p class="text-gray-500 text-xs mb-2">Para Volantes G923, G29 y G920</p>
-                    <span class="text-lg font-bold text-violet-600">$95.550</span>
+
+                <!-- Auriculares Arctis Nova 7P -->
+                <div class="swiper-slide product-card h-full" data-brand="steelseries">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
+                    <img src="./img/assets/productos/perifericos/auricularessteelseriesnova7p.jpg"
+                      alt="Auriculares SteelSeries Arctis Nova 7P" class="w-full h-40 object-contain mx-auto">
+                    <div class="flex flex-col justify-between flex-grow mt-3">
+                      <p class="text-sm text-gray-700 leading-snug">
+                        Auriculares SteelSeries Arctis Nova 7P — Wireless 2.4Ghz Bluetooth Black
+                      </p>
+                      <span class="text-base font-semibold text-violet-600 mt-3">$358.200</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Asus -->
-              <div class="swiper-slide product-card hidden" data-brand="asus">
-                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
-                  <h3 class="p-4 text-center font-bold">PRODUCTOS ASUS AQUÍ</h3>
+                <!-- Teclado Apex 7 -->
+                <div class="swiper-slide product-card h-full" data-brand="steelseries">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
+                    <img src="./img/assets/productos/perifericos/tecladosteelseriesapex7.jpg"
+                      alt="Teclado SteelSeries Apex 7" class="w-full h-40 object-contain mx-auto">
+                    <div class="flex flex-col justify-between flex-grow mt-3">
+                      <p class="text-sm text-gray-700 leading-snug">
+                        Teclado Mecánico SteelSeries Apex 7 — OLED Smart Display / Switch QX2 RED RGB
+                      </p>
+                      <span class="text-base font-semibold text-violet-600 mt-3">$180.950</span>
+                    </div>
+                  </div>
                 </div>
+
+                <!-- Mouse Aerox 3 Snow -->
+                <div class="swiper-slide product-card h-full" data-brand="steelseries">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
+                    <img src="./img/assets/productos/perifericos/mousesteelseriesaerox3.jpg"
+                      alt="Mouse SteelSeries Aerox 3 Onyx Snow" class="w-full h-40 object-contain mx-auto">
+                    <div class="flex flex-col justify-between flex-grow mt-3">
+                      <p class="text-sm text-gray-700 leading-snug">
+                        Mouse SteelSeries Aerox 3 Onyx Snow Wireless 2.4Ghz Bluetooth Ultra LightWeight
+                      </p>
+                      <span class="text-base font-semibold text-violet-600 mt-3">$110.000</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mouse Aerox 3 Ghost -->
+                <div class="swiper-slide product-card h-full" data-brand="steelseries">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
+                    <img src="./img/assets/productos/perifericos/mousesteelseriesaerox3onyx.jpg"
+                      alt="Mouse SteelSeries Aerox 3 Onyx Ghost" class="w-full h-40 object-contain mx-auto">
+                    <div class="flex flex-col justify-between flex-grow mt-3">
+                      <p class="text-sm text-gray-700 leading-snug">
+                        Mouse SteelSeries Aerox 3 Onyx Ghost Wireless 2.4Ghz Bluetooth Ultra LightWeight
+                      </p>
+                      <span class="text-base font-semibold text-violet-600 mt-3">$110.000</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ASUS -->
+                <div class="swiper-slide product-card hidden h-full" data-brand="asus">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex items-center justify-center text-center p-4">
+                    <h3 class="text-gray-700 font-semibold">Productos ASUS próximamente</h3>
+                  </div>
+                </div>
+
+                <!-- Logitech -->
+
+                <!-- Volante Logitech G923 -->
+                <div class="swiper-slide product-card hidden" data-brand="logitech">
+                  <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
+                    <img src="./img/assets/productos/logitech-volante-g923.png" alt="Volante Logitech G923"
+                      class="w-full h-48 object-contain p-4">
+                    <div class="p-4">
+                      <h3 class="text-sm font-semibold text-gray-700">Volante Logitech G923 Trueforce Racing</h3>
+                      <p class="text-gray-500 text-xs mb-2">PC/XBOX S/X/One</p>
+                      <span class="text-lg font-bold text-violet-600">$601.150</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Palanca Logitech -->
+                <div class="swiper-slide product-card hidden" data-brand="logitech">
+                  <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
+                    <img src="./img/assets/productos/logitech-palanca.png" alt="Palanca Logitech"
+                      class="w-full h-48 object-contain p-4">
+                    <div class="p-4">
+                      <h3 class="text-sm font-semibold text-gray-700">Palanca Logitech Drive Force Shifter</h3>
+                      <p class="text-gray-500 text-xs mb-2">Para Volantes G923, G29 y G920</p>
+                      <span class="text-lg font-bold text-violet-600">$95.550</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Volante Logitech G923 -->
+                <div class="swiper-slide product-card hidden h-full" data-brand="logitech">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
+                    <img src="./img/assets/productos/logitech-volante-g923.png" alt="Volante Logitech G923"
+                      class="w-full h-40 object-contain mx-auto">
+                    <div class="flex flex-col justify-between flex-grow mt-3">
+                      <p class="text-sm text-gray-700 leading-snug">
+                        Volante Logitech G923 Trueforce Racing — Compatible con PC, Xbox Series y One
+                      </p>
+                      <span class="text-base font-semibold text-violet-600 mt-3">$601.150</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Palanca Logitech -->
+                <div class="swiper-slide product-card hidden h-full" data-brand="logitech">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
+                    <img src="./img/assets/productos/logitech-palanca.png" alt="Palanca Logitech"
+                      class="w-full h-40 object-contain mx-auto">
+                    <div class="flex flex-col justify-between flex-grow mt-3">
+                      <p class="text-sm text-gray-700 leading-snug">
+                        Palanca Logitech Drive Force Shifter — Compatible con G923, G29 y G920
+                      </p>
+                      <span class="text-base font-semibold text-violet-600 mt-3">$95.550</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="swiper-button-next text-violet-600"></div>
+                <div class="swiper-button-prev text-violet-600"></div>
               </div>
             </div>
-
-            <div class="swiper-button-next text-violet-600"></div>
-            <div class="swiper-button-prev text-violet-600"></div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
 
 
     <!-- Seccion de Resenias -->
-  <section class="bg-[#1e1e1e] text-white py-16 px-6 my-[50px 0]">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-semibold mb-2">
-        Qué Opinan <span class="text-violet-500">Nuestros Clientes</span>
-      </h2>
-      <p class="text-sm text-gray-400 mb-10">Basado en reseñas reales ⭐⭐⭐⭐⭐</p>
+    <section class="bg-[#1e1e1e] text-white py-16 px-6 my-[50px 0]">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-2">
+          Qué Opinan <span class="text-violet-500">Nuestros Clientes</span>
+        </h2>
+        <p class="text-sm text-gray-400 mb-10">Basado en reseñas reales ⭐⭐⭐⭐⭐</p>
 
-      <div class="grid gap-6 md:grid-cols-3">
-        <!-- Resenia 1 -->
-        <div class="bg-[#2a2a2a] rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-[1.02] transition">
-          <h3 class="text-lg font-semibold mb-2">"Muy conforme"</h3>
-          <div class="flex text-yellow-400 mb-3">
-            ⭐⭐⭐⭐⭐
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Resenia 1 -->
+          <div class="bg-[#2a2a2a] rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-[1.02] transition">
+            <h3 class="text-lg font-semibold mb-2">"Muy conforme"</h3>
+            <div class="flex text-yellow-400 mb-3">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <p class="text-gray-300 text-sm mb-6">
+              Vi su publicidad por Instagram, compré una PC armada y todo el proceso fue rápido y claro.
+              Muy buena atención y seguimiento del pedido.
+            </p>
+            <div class="mt-auto text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                class="h-5 mx-auto mb-2">
+              <p class="text-sm font-medium">Paulo Torres</p>
+              <p class="text-xs text-gray-400">11/02/2025</p>
+            </div>
           </div>
-          <p class="text-gray-300 text-sm mb-6">
-            Vi su publicidad por Instagram, compré una PC armada y todo el proceso fue rápido y claro. 
-            Muy buena atención y seguimiento del pedido.
-          </p>
-          <div class="mt-auto text-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-5 mx-auto mb-2">
-            <p class="text-sm font-medium">Paulo Torres</p>
-            <p class="text-xs text-gray-400">11/02/2025</p>
-          </div>
-        </div>
 
-        <!-- Resenia 2 -->
-        <div class="bg-[#2a2a2a] rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-[1.02] transition">
-          <h3 class="text-lg font-semibold mb-2">"Atención genial"</h3>
-          <div class="flex text-yellow-400 mb-3">
-            ⭐⭐⭐⭐⭐
+          <!-- Resenia 2 -->
+          <div class="bg-[#2a2a2a] rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-[1.02] transition">
+            <h3 class="text-lg font-semibold mb-2">"Atención genial"</h3>
+            <div class="flex text-yellow-400 mb-3">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <p class="text-gray-300 text-sm mb-6">
+              Tuve un problema con un producto y me ayudaron enseguida.
+              Excelente servicio postventa y trato por WhatsApp.
+            </p>
+            <div class="mt-auto text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                class="h-5 mx-auto mb-2">
+              <p class="text-sm font-medium">Fabricio Ludeña</p>
+              <p class="text-xs text-gray-400">16/03/2025</p>
+            </div>
           </div>
-          <p class="text-gray-300 text-sm mb-6">
-            Tuve un problema con un producto y me ayudaron enseguida. 
-            Excelente servicio postventa y trato por WhatsApp.
-          </p>
-          <div class="mt-auto text-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-5 mx-auto mb-2">
-            <p class="text-sm font-medium">Fabricio Ludeña</p>
-            <p class="text-xs text-gray-400">16/03/2025</p>
-          </div>
-        </div>
 
-        <!-- Resenia 3 -->
-        <div class="bg-[#2a2a2a] rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-[1.02] transition">
-          <h3 class="text-lg font-semibold mb-2">"La experiencia fue lo mejor"</h3>
-          <div class="flex text-yellow-400 mb-3">
-            ⭐⭐⭐⭐⭐
-          </div>
-          <p class="text-gray-300 text-sm mb-6">
-            Armé una PC y me asesoraron excelente. 
-            Atención rápida, amable y con seguimiento. Recomendadísimos.
-          </p>
-          <div class="mt-auto text-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-5 mx-auto mb-2">
-            <p class="text-sm font-medium">Otniel Tobon</p>
-            <p class="text-xs text-gray-400">08/12/2024</p>
+          <!-- Resenia 3 -->
+          <div class="bg-[#2a2a2a] rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-[1.02] transition">
+            <h3 class="text-lg font-semibold mb-2">"La experiencia fue lo mejor"</h3>
+            <div class="flex text-yellow-400 mb-3">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <p class="text-gray-300 text-sm mb-6">
+              Armé una PC y me asesoraron excelente.
+              Atención rápida, amable y con seguimiento. Recomendadísimos.
+            </p>
+            <div class="mt-auto text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                class="h-5 mx-auto mb-2">
+              <p class="text-sm font-medium">Otniel Tobon</p>
+              <p class="text-xs text-gray-400">08/12/2024</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-
+    </section>
 
   </main>
 
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <!-- Grid Principal-->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
 
-<footer class="bg-gray-900 text-white py-12">
-  <div class="container mx-auto px-4">
-    <!-- Grid Principal-->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-      
-      <!-- Logo y Descripcion -->
-      <div class="lg:col-span-1">
-        <a href="#" class="flex items-center mb-4">
-          <img src="./img/assets/logos/logo.png" alt="NEXO" class="h-10 w-auto mr-3 hover:scale-105 transition-transform">
-          <span class="text-xl font-bold text-violet-400">NEXO</span>
-        </a>
-        <p class="text-gray-300 text-sm leading-relaxed">
-          Tu tienda especializada en componentes de PC, notebooks y periféricos. Envíos a todo el país con la mejor calidad y precios competitivos.
-        </p>
-      </div>
+        <!-- Logo y Descripcion -->
+        <div class="lg:col-span-1">
+          <a href="#" class="flex items-center mb-4">
+            <img src="./img/assets/logos/logo.png" alt="NEXO"
+              class="h-10 w-auto mr-3 hover:scale-105 transition-transform">
+            <span class="text-xl font-bold text-violet-400">NEXO</span>
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Tu tienda especializada en componentes de PC, notebooks y periféricos. Envíos a todo el país con la mejor
+            calidad y precios competitivos.
+          </p>
+        </div>
 
-      <!-- Categorias -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4 text-white border-b-2 border-violet-600 pb-2 w-fit">Categorías</h3>
-        <ul class="space-y-2">
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-laptop mr-2 text-violet-500"></i>Todos los productos
-          </a></li>
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-laptop mr-2 text-violet-500"></i>Notebooks
-          </a></li>
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-desktop mr-2 text-violet-500"></i>Monitores
-          </a></li>
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-cogs mr-2 text-violet-500"></i>PC Ensambladas
-          </a></li>
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-tools mr-2 text-violet-500"></i>Personalizar mi PC
-          </a></li>
-        </ul>
-      </div>
+        <!-- Categorias -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-white border-b-2 border-violet-600 pb-2 w-fit">Categorías</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-laptop mr-2 text-violet-500"></i>Todos los productos
+              </a></li>
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-laptop mr-2 text-violet-500"></i>Notebooks
+              </a></li>
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-desktop mr-2 text-violet-500"></i>Monitores
+              </a></li>
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-cogs mr-2 text-violet-500"></i>PC Ensambladas
+              </a></li>
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-tools mr-2 text-violet-500"></i>Personalizar mi PC
+              </a></li>
+          </ul>
+        </div>
 
-      <!-- Soporte -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4 text-white border-b-2 border-violet-600 pb-2 w-fit">Soporte</h3>
-        <ul class="space-y-2">
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-question-circle mr-2 text-violet-500"></i>Ayuda y FAQs
-          </a></li>
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-shipping-fast mr-2 text-violet-500"></i>Envíos y Devoluciones
-          </a></li>
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-credit-card mr-2 text-violet-500"></i>Formas de Pago
-          </a></li>
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-file-contract mr-2 text-violet-500"></i>Términos y Condiciones
-          </a></li>
-          <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
-            <i class="fas fa-shield-alt mr-2 text-violet-500"></i>Política de Privacidad
-          </a></li>
-        </ul>
-      </div>
+        <!-- Soporte -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-white border-b-2 border-violet-600 pb-2 w-fit">Soporte</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-question-circle mr-2 text-violet-500"></i>Ayuda y FAQs
+              </a></li>
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-shipping-fast mr-2 text-violet-500"></i>Envíos y Devoluciones
+              </a></li>
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-credit-card mr-2 text-violet-500"></i>Formas de Pago
+              </a></li>
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-file-contract mr-2 text-violet-500"></i>Términos y Condiciones
+              </a></li>
+            <li><a href="#" class="text-gray-300 hover:text-violet-400 transition-colors text-sm flex items-center">
+                <i class="fas fa-shield-alt mr-2 text-violet-500"></i>Política de Privacidad
+              </a></li>
+          </ul>
+        </div>
 
-      <!-- Contacto y Redes -->
-      <div class="lg:col-span-1">
-        <h3 class="text-lg font-semibold mb-4 text-white border-b-2 border-violet-600 pb-2 w-fit">Contacto</h3>
-        <div class="space-y-3 mb-6">
-          <div class="flex items-center text-gray-300 text-sm">
-            <i class="fas fa-map-marker-alt mr-3 text-violet-500"></i>
-            <span>Av. Corrientes 1234, CABA, Argentina</span>
+        <!-- Contacto y Redes -->
+        <div class="lg:col-span-1">
+          <h3 class="text-lg font-semibold mb-4 text-white border-b-2 border-violet-600 pb-2 w-fit">Contacto</h3>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center text-gray-300 text-sm">
+              <i class="fas fa-map-marker-alt mr-3 text-violet-500"></i>
+              <span>Av. Corrientes 1234, CABA, Argentina</span>
+            </div>
+            <div class="flex items-center text-gray-300 text-sm">
+              <i class="fas fa-phone mr-3 text-violet-500"></i>
+              <span>+54 11 1234-5678</span>
+            </div>
+            <div class="flex items-center text-gray-300 text-sm">
+              <i class="fas fa-envelope mr-3 text-violet-500"></i>
+              <span>info@nexo.com.ar</span>
+            </div>
           </div>
-          <div class="flex items-center text-gray-300 text-sm">
-            <i class="fas fa-phone mr-3 text-violet-500"></i>
-            <span>+54 11 1234-5678</span>
-          </div>
-          <div class="flex items-center text-gray-300 text-sm">
-            <i class="fas fa-envelope mr-3 text-violet-500"></i>
-            <span>info@nexo.com.ar</span>
+
+          <!-- Redes Sociales -->
+          <h4 class="text-sm font-medium mb-3 text-gray-300">Síguenos</h4>
+          <div class="flex space-x-4">
+            <a href="#"
+              class="w-10 h-10 bg-violet-600 hover:bg-violet-500 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 bg-violet-600 hover:bg-violet-500 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 bg-violet-600 hover:bg-violet-500 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 bg-violet-600 hover:bg-violet-500 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
+              <i class="fab fa-youtube"></i>
+            </a>
           </div>
         </div>
-        
-        <!-- Redes Sociales -->
-        <h4 class="text-sm font-medium mb-3 text-gray-300">Síguenos</h4>
-        <div class="flex space-x-4">
-          <a href="#" class="w-10 h-10 bg-violet-600 hover:bg-violet-500 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
-            <i class="fab fa-facebook-f"></i>
+      </div>
+
+      <!-- Linea Divisoria -->
+      <hr class="border-gray-700 mb-6">
+
+      <!-- Copyright y Pagos -->
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+        <p>&copy; 2024 NEXO - Componentes de PC y Periféricos. Todos los derechos reservados.</p>
+
+        <!-- Iconos de Pagos -->
+        <div class="flex items-center space-x-4 mt-4 md:mt-0">
+          <span class="text-xs mr-4">Pagos aceptados:</span>
+          <a href="#" class="hover:scale-110 transition-transform">
+            <i class="fab fa-cc-visa text-2xl text-blue-500"></i>
           </a>
-          <a href="#" class="w-10 h-10 bg-violet-600 hover:bg-violet-500 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
-            <i class="fab fa-instagram"></i>
+          <a href="#" class="hover:scale-110 transition-transform">
+            <i class="fab fa-cc-mastercard text-2xl text-red-500"></i>
           </a>
-          <a href="#" class="w-10 h-10 bg-violet-600 hover:bg-violet-500 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
-            <i class="fab fa-twitter"></i>
+          <a href="#" class="hover:scale-110 transition-transform">
+            <i class="fas fa-credit-card text-2xl text-gray-300"></i>
           </a>
-          <a href="#" class="w-10 h-10 bg-violet-600 hover:bg-violet-500 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
-            <i class="fab fa-youtube"></i>
+          <a href="#" class="hover:scale-110 transition-transform">
+            <i class="fas fa-mobile-alt text-2xl text-green-500"></i> <!-- Mercado Pago-->
           </a>
         </div>
       </div>
     </div>
-
-    <!-- Linea Divisoria -->
-    <hr class="border-gray-700 mb-6">
-
-    <!-- Copyright y Pagos -->
-    <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-      <p>&copy; 2024 NEXO - Componentes de PC y Periféricos. Todos los derechos reservados.</p>
-      
-      <!-- Iconos de Pagos -->
-      <div class="flex items-center space-x-4 mt-4 md:mt-0">
-        <span class="text-xs mr-4">Pagos aceptados:</span>
-        <a href="#" class="hover:scale-110 transition-transform">
-          <i class="fab fa-cc-visa text-2xl text-blue-500"></i>
-        </a>
-        <a href="#" class="hover:scale-110 transition-transform">
-          <i class="fab fa-cc-mastercard text-2xl text-red-500"></i>
-        </a>
-        <a href="#" class="hover:scale-110 transition-transform">
-          <i class="fas fa-credit-card text-2xl text-gray-300"></i>
-        </a>
-        <a href="#" class="hover:scale-110 transition-transform">
-          <i class="fas fa-mobile-alt text-2xl text-green-500"></i> <!-- Mercado Pago-->
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="./js/script.js"></script>
 </body>
+
 </html>
