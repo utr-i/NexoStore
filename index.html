@@ -12,11 +12,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="shortcut icon" href="./img/assets/logos/favicon.ico" />
   <link rel="stylesheet" href="./css/style.css">
-  <!-- 3D -->
-   <!-- Three.js + loaders -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/controls/OrbitControls.js"></script>
 </head>
 
 <body class="bg-gray-100">
@@ -54,7 +49,7 @@
         <a href="#" class="hover:text-violet-500 flex items-center">
           <i class="fas fa-question-circle mr-2"></i> Ayuda
         </a>
-        <a href="#" class="hover:text-violet-500 flex items-center">
+        <a href="./auth.html" class="hover:text-violet-500 flex items-center">
           <i class="fas fa-user mr-2"></i> Iniciar sesión
         </a>
         <a href="#" class="hover:text-violet-500 flex items-center relative">
@@ -136,10 +131,10 @@
     <div class="bg-gray-900 text-md flex justify-around py-3">
       <!-- Icono persona -->
       <i class="fas fa-user mr-1 flex items-center"></i>
-      <a href="#" class="flex items-center space-x-2 text-white hover:text-violet-500">
+      <a href="./auth.html" class="flex items-center space-x-2 text-white hover:text-violet-500">
         <span>Crear cuenta</span>
       </a>
-      <a href="#" class="flex items-center space-x-2 text-white hover:text-violet-500">
+      <a href="./auth.html" class="flex items-center space-x-2 text-white hover:text-violet-500">
         <span>Iniciar sesión</span>
       </a>
     </div>
@@ -665,13 +660,13 @@
               <div class="swiper-button-prev text-violet-600 !w-8 !h-8 flex items-center justify-center">
                 <i class="fa-solid fa-chevron-left text-xl text-violet-600"></i>
               </div>
-
             </div>
           </div>
         </div>
     </section>
 
-    <section class="bg-gray-900 py-16 overflow-hidden">
+    <!-- 3D RTX 5090 -->
+        <section class="bg-gray-900 py-16 overflow-hidden">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-10">
           <p class="text-violet-400 font-semibold uppercase tracking-widest text-sm mb-2">¡Novedad Absoluta!</p>
@@ -683,10 +678,9 @@
           </p>
         </div>
 
-        <div class="w-full h-[350px] sm:h-[450px] lg:h-[600px] xl:h-[700px] rounded-3xl overflow-hidden shadow-2xl shadow-violet-500/30 border-4 border-violet-700 mx-auto relative">
-          <canvas id="gpu-3d" class="w-full h-full"></canvas>
+        <div class="w-full h-[350px] sm:h-[450px] lg:h-[600px] xl:h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-violet-500/30 border-4 border-violet-700 mx-auto relative">
+          <model-viewer class="w-full h-full" alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="./img/assets/3d/scene.gltf" poster="shared-assets/models/NeilArmstrong.webp" shadow-intensity="1" camera-controls touch-action="pan-y" auto-rotate></model-viewer>
         </div>
-
 
         <div class="mt-12 text-center">
           <a href="#" class="inline-block bg-violet-600 text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-violet-700 transition duration-300 transform hover:scale-105 shadow-lg shadow-violet-500/50">
@@ -695,8 +689,7 @@
         </div>
 
       </div>
-    </section>
-
+    </section
     <!-- Seccion de Resenias -->
     <section class="bg-[#1e1e1e] text-white py-16 px-6 my-[50px 0]">
       <div class="max-w-6xl mx-auto text-center">
@@ -904,6 +897,7 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
   <script src="./js/script.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </body>
 
 </html>
