@@ -12,6 +12,11 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="shortcut icon" href="./img/assets/logos/favicon.ico" />
   <link rel="stylesheet" href="./css/style.css">
+  <!-- 3D -->
+   <!-- Three.js + loaders -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/controls/OrbitControls.js"></script>
 </head>
 
 <body class="bg-gray-100">
@@ -636,16 +641,45 @@
                   </div>
                 </div>
 
-                <!-- Botones -->
-                <div class="swiper-button-next text-violet-600"></div>
-                <div class="swiper-button-prev text-violet-600"></div>
               </div>
+              <!-- Botones -->
+              <div class="swiper-button-next text-violet-600 !w-8 !h-8 flex items-center justify-center">
+                <i class="fa-solid fa-chevron-right text-xl text-violet-600"></i>
+              </div>
+              <div class="swiper-button-prev text-violet-600 !w-8 !h-8 flex items-center justify-center">
+                <i class="fa-solid fa-chevron-left text-xl text-violet-600"></i>
+              </div>
+
             </div>
           </div>
         </div>
     </section>
 
+    <section class="bg-gray-900 py-16 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <p class="text-violet-400 font-semibold uppercase tracking-widest text-sm mb-2">¡Novedad Absoluta!</p>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+            La Potencia del Futuro <span class="text-green-400 block sm:inline-block">RTX 5090</span> Ha Llegado 🚀
+          </h2>
+          <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+            Sé uno de los primeros en ver el diseño exclusivo de la **GPU más potente** de NVIDIA. Gírala en 360° y descubre cada detalle.
+          </p>
+        </div>
 
+        <div class="w-full h-[350px] sm:h-[450px] lg:h-[600px] xl:h-[700px] rounded-3xl overflow-hidden shadow-2xl shadow-violet-500/30 border-4 border-violet-700 mx-auto relative">
+          <canvas id="gpu-3d" class="w-full h-full"></canvas>
+        </div>
+
+
+        <div class="mt-12 text-center">
+          <a href="#" class="inline-block bg-violet-600 text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-violet-700 transition duration-300 transform hover:scale-105 shadow-lg shadow-violet-500/50">
+            ¡Quiero la RTX 5090!
+          </a>
+        </div>
+
+      </div>
+    </section>
 
     <!-- Seccion de Resenias -->
     <section class="bg-[#1e1e1e] text-white py-16 px-6 my-[50px 0]">
