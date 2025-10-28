@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXO - Componentes de PC y Periféricos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="shortcut icon" href="./img/assets/logos/favicon.ico" />
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Banner superior -->
+  <section class="bg-violet-800 text-white text-xs sm:text-sm py-2">
+    <div class="container mx-auto flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 text-center md:text-left">
+      <span>6 Cuotas sin interés 💳 // Envíos a todo el País🚗 // 20% de Descuento pagando con transferencia 📲</span>
+    </div>
+  </section>
+
+  <!-- Header -->
+  <header class="bg-gray-800 shadow-sm py-4 px-4 md:px-[100px]">
+    <div class="flex items-center justify-between gap-4">
+      <!-- Logo -->
+      <a href="./index.html" class="flex-shrink-0">
+        <img src="./img/assets/logos/logo.png" alt="logo" class="h-[40px] md:h-[70px]">
+      </a>
+
+      <!-- Barra de búsqueda -->
+      <div class="flex-1 max-w-xl mx-6">
+        <div class="relative">
+          <input type="text" placeholder="¿Qué estás buscando?" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
+          <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Acciones -->
+      <div class="hidden md:flex items-center space-x-6 text-white font-medium">
+        <a href="#" class="hover:text-violet-500 flex items-center">
+          <i class="fas fa-question-circle mr-2"></i> Ayuda
+        </a>
+        <a href="#" class="hover:text-violet-500 flex items-center">
+          <i class="fas fa-user mr-2"></i> Iniciar sesión
+        </a>
+        <a href="#" class="hover:text-violet-500 flex items-center relative">
+          <i class="fas fa-shopping-cart text-xl"></i>
+          <span class="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+        </a>
+      </div>
+
+      <!-- Hamburguesa + carrito en mobile -->
+      <div class="flex md:hidden items-center space-x-4 text-white">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <button>
+          <i class="fas fa-shopping-cart text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navegación desktop -->
+  <nav class="bg-gray-800 text-white border-t border-gray-700 hidden md:block">
+    <div class="container mx-auto px-4">
+      <ul class="flex justify-center items-center space-x-8 py-4">
+        <li><a href="./productos.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Todos los productos</a></li>
+        <li><a href="./notebooks.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Notebooks</a></li>
+        <li><a href="./monitores.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Monitores</a></li>
+        <li><a href="./pcsEnsambladas.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">PC Ensambladas</a></li>
+        <li><a href="./componentes.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">Personalizar mi PC</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sección Sobre Nosotros -->
+  <section class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Sobre Nosotros</h2>
+
+    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+      Somos un grupo de apasionados por la tecnología que decidió crear <strong>NEXO</strong>, una tienda online dedicada a ofrecer los mejores componentes, periféricos y equipos personalizados.
+      Nuestro objetivo es brindar atención personalizada, precios competitivos y confianza a cada cliente que confía en nosotros.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Persona 1 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md text-center">
+        <img src="./img/assets/nosotros/utri.jpg" alt="Foto 1" class="w-40 h-40 object-cover rounded-full mx-auto mb-4 shadow-md">
+        <h3 class="text-lg font-semibold text-gray-800">Francisco Elisondo</h3>
+        <p class="text-sm text-gray-600 mt-2">Fundador y desarrollador Frontend</p>
+      </div>
+
+      <!-- Persona 2 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md text-center">
+        <img src="./img/assets/nosotros/mateo.jpg" alt="Foto 2" class="w-40 h-40 object-cover rounded-full mx-auto mb-4 shadow-md">
+        <h3 class="text-lg font-semibold text-gray-800">Mateo Torres</h3>
+        <p class="text-sm text-gray-600 mt-2">Especialista en Hardware</p>
+      </div>
+
+      <!-- Persona 3 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md text-center">
+        <img src="./img/assets/nosotros/facu.jpg" alt="Foto 3" class="w-40 h-40 object-cover rounded-full mx-auto mb-4 shadow-md">
+        <h3 class="text-lg font-semibold text-gray-800">Facundo Oyola</h3>
+        <p class="text-sm text-gray-600 mt-2">Atención al cliente y soporte técnico</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 text-center py-6 mt-16">
+    <p>&copy; 2024 NEXO - Componentes de PC y Periféricos. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
