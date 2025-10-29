@@ -37,6 +37,49 @@ document.addEventListener("click", (event) => {
 mobileOverlay.addEventListener("click", closeMobileMenu);
 
 
+/* Selectores para el Carrito */
+const miniCart = document.getElementById("mini-cart");
+const cartOverlay = document.getElementById("cart-overlay");
+const closeCartBtn = document.getElementById("close-cart-btn");
+const continueShoppingLink = document.getElementById("continue-shopping");
+
+/* Selectores para los botones de apertura del carrito */
+const cartButtons = document.querySelectorAll(
+    '#desktop-cart-btn, #mobile-cart-btn'
+); // Selecciona los botones del carrito por sus nuevos IDs // Selecciona todos los enlaces con el ícono de carrito
+
+/* Funcion para abrir el carrito */
+const openMiniCart = (event) => {
+    event.preventDefault(); // Evita que el enlace # recargue la página
+    miniCart.classList.remove("translate-x-full");
+    miniCart.classList.add("translate-x-0");
+    cartOverlay.classList.remove("hidden");
+    
+    // Asegurar que el menú principal (hamburguesa) esté cerrado
+    closeMobileMenu(); 
+};
+
+/* Funcion para cerrar el carrito */
+const closeMiniCart = () => {
+    miniCart.classList.remove("translate-x-0");
+    miniCart.classList.add("translate-x-full");
+    cartOverlay.classList.add("hidden");
+};
+
+/* Eventos para Abrir */
+cartButtons.forEach(button => {
+    button.addEventListener("click", openMiniCart);
+});
+
+/* Eventos para Cerrar */
+closeCartBtn.addEventListener("click", closeMiniCart);
+cartOverlay.addEventListener("click", closeMiniCart);
+continueShoppingLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeMiniCart();
+});
+
+
 /* Boton top scroll */
 
   const btnSubir = document.getElementById("btnSubir");
@@ -134,6 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const productCards = document.querySelectorAll('.product-card');
     const promoImage = document.querySelector('#brand-promo img');
     const promoTitle = document.querySelector('#promo-title');
+    /* Seleccionar los botones de navegación del carrusel de marcas */
+    const brandNextButton = document.querySelector('.brand-products .swiper-button-next');
+    const brandPrevButton = document.querySelector('.brand-products .swiper-button-prev');
 
     /* Datos de cada marca con su imagen y titulo */
     const promoData = {
@@ -173,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             promoImage.src = data.image;
             promoTitle.textContent = data.title;
         }
-
+        
         /* Reiniciar el swiper para que solo muestre los productos visibles */
         if (brandSwiper) {
             brandSwiper.destroy(true, true);
@@ -191,6 +237,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 1024: { slidesPerView: 3, spaceBetween: 20 },
             }
         });
+
+        const shouldHideArrows = visibleSlides <= 1;
+
+        if (brandNextButton && brandPrevButton) {
+            if (shouldHideArrows) {
+                // Ocultar flechas usando una clase de Tailwind
+                brandNextButton.classList.add('hidden');
+                brandPrevButton.classList.add('hidden');
+            } else {
+                // Mostrar flechas
+                brandNextButton.classList.remove('hidden');
+                brandPrevButton.classList.remove('hidden');
+            }
+        }
 
         /* Cambiar el estilo de los botones segun la marca seleccionada */
         filterButtons.forEach(btn => {

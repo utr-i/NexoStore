@@ -52,11 +52,13 @@
         <a href="./auth.html" class="hover:text-violet-500 flex items-center">
           <i class="fas fa-user mr-2"></i> Iniciar sesión
         </a>
-        <a href="#" class="hover:text-violet-500 flex items-center relative">
-          <i class="fas fa-shopping-cart text-xl"></i>
-          <span
-            class="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
-        </a>
+        <div class="hidden md:flex items-center space-x-6 text-white font-medium">
+          <a href="#" id="desktop-cart-btn" class="hover:text-violet-500 flex items-center relative">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span
+              class="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+          </a>
+        </div>
       </div>
 
       <!-- Hamburguesa + carrito en mobile -->
@@ -66,45 +68,52 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
-        <button>
-          <i class="fas fa-shopping-cart text-xl"></i>
-        </button>
+        <div class="flex md:hidden items-center space-x-4 text-white">
+          <a href="#" id="mobile-cart-btn">
+            <i class="fas fa-shopping-cart text-xl"></i>
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
   <!-- Navegacion desktop -->
-<nav class="bg-gray-800 text-white border-t border-gray-700 hidden md:block">
-  <div class="container mx-auto px-4">
-    <ul class="flex justify-center items-center space-x-8 py-4">
-      <li>
-        <a href="./productos.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
-          Todos los productos
-        </a>
-      </li>
-      <li>
-        <a href="./notebooks.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
-          Notebooks
-        </a>
-      </li>
-      <li>
-        <a href="./monitores.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
-          Monitores
-        </a>
-      </li>
-      <li>
-        <a href="./pcsEnsambladas.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
-          PC Ensambladas
-        </a>
-      </li>
-      <li>
-        <a href="./componentes.html" class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
-          Personalizar mi PC
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
+  <nav class="bg-gray-800 text-white border-t border-gray-700 hidden md:block">
+    <div class="container mx-auto px-4">
+      <ul class="flex justify-center items-center space-x-8 py-4">
+        <li>
+          <a href="./productos.html"
+            class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
+            Todos los productos
+          </a>
+        </li>
+        <li>
+          <a href="./notebooks.html"
+            class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
+            Notebooks
+          </a>
+        </li>
+        <li>
+          <a href="./monitores.html"
+            class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
+            Monitores
+          </a>
+        </li>
+        <li>
+          <a href="./pcsEnsambladas.html"
+            class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
+            PC Ensambladas
+          </a>
+        </li>
+        <li>
+          <a href="./componentes.html"
+            class="px-2 font-bold text-sm uppercase cursor-pointer hover:scale-110 transition hover:text-violet-600">
+            Personalizar mi PC
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 
   <!-- Menu Mobile -->
@@ -136,6 +145,43 @@
       </a>
       <a href="./auth.html" class="flex items-center space-x-2 text-white hover:text-violet-500">
         <span>Iniciar sesión</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="cart-overlay" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 hidden"></div>
+
+  <div id="mini-cart"
+    class="fixed inset-y-0 right-0 bg-white w-full max-w-xs md:max-w-md transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col h-full shadow-2xl">
+
+    <div class="p-5 bg-gray-800 text-white flex justify-between items-center">
+      <h2 class="text-xl font-bold flex items-center">
+        <i class="fas fa-shopping-cart mr-3 text-violet-400"></i> Mi Carrito
+      </h2>
+      <button id="close-cart-btn" class="text-white text-2xl hover:text-violet-500 transition">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="flex-1 p-5 overflow-y-auto">
+      <p class="text-gray-600 text-center py-10 border-b border-gray-200">
+        🛒 Tu carrito está vacío. ¡Añade productos geniales!
+      </p>
+
+    </div>
+
+    <div class="p-5 border-t border-gray-200">
+      <div class="flex justify-between font-bold text-gray-800 mb-4">
+        <span>Subtotal:</span>
+        <span class="text-violet-600">$0.00</span>
+      </div>
+      <a href="#"
+        class="w-full block text-center bg-violet-600 text-white font-bold py-3 rounded-lg hover:bg-violet-700 transition">
+        Finalizar Compra
+      </a>
+      <a href="#" id="continue-shopping"
+        class="w-full block text-center mt-2 text-sm text-gray-500 hover:text-violet-600 transition">
+        Continuar Comprando
       </a>
     </div>
   </div>
@@ -385,8 +431,6 @@
       </div>
     </section>
 
-
-
     <!-- Nuevos Ingresos -->
     <section class="bg-gray-100 py-16">
       <div class="max-w-7xl mx-auto px-4">
@@ -510,144 +554,162 @@
               <!-- Contenedor de productos -->
               <div class="swiper-wrapper h-full" id="products-container">
 
-                <!-- Steel Series -->
-                <!-- Teclado Apex 5 -->
                 <div class="swiper-slide product-card h-full" data-brand="steelseries">
                   <div
                     class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
                     <img src="./img/assets/productos/perifericos/tecladosteelseriesapex5.jpg"
                       alt="Teclado SteelSeries Apex 5" class="w-full h-40 object-contain mx-auto">
                     <div class="flex flex-col justify-between flex-grow mt-3">
-                      <p class="text-sm text-gray-700 leading-snug">
-                        Teclado Mecánico SteelSeries Apex 5 — Switch Hybrid Blue RGB
+                      <h3 class="text-base font-bold text-gray-800 leading-snug">
+                        Teclado Mecánico SteelSeries Apex 5
+                      </h3>
+                      <p class="text-sm text-gray-600 mb-2">
+                        Switch Hybrid Blue RGB, Pantalla OLED. Estructura de aleación.
                       </p>
-                      <span class="text-base font-semibold text-violet-600 mt-3">$133.300</span>
+                      <span class="text-xl font-extrabold text-violet-700 mt-2">$133.300</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- Auriculares Arctis Nova 7P -->
                 <div class="swiper-slide product-card h-full" data-brand="steelseries">
                   <div
                     class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
                     <img src="./img/assets/productos/perifericos/auricularessteelseriesnova7p.jpg"
                       alt="Auriculares SteelSeries Arctis Nova 7P" class="w-full h-40 object-contain mx-auto">
                     <div class="flex flex-col justify-between flex-grow mt-3">
-                      <p class="text-sm text-gray-700 leading-snug">
-                        Auriculares SteelSeries Arctis Nova 7P — Wireless 2.4Ghz Bluetooth Black
+                      <h3 class="text-base font-bold text-gray-800 leading-snug">
+                        Auriculares SteelSeries Arctis Nova 7P
+                      </h3>
+                      <p class="text-sm text-gray-600 mb-2">
+                        Wireless 2.4Ghz & Bluetooth. Audio espacial 360°. Micrófono ClearCast.
                       </p>
-                      <span class="text-base font-semibold text-violet-600 mt-3">$358.200</span>
+                      <span class="text-xl font-extrabold text-violet-700 mt-2">$358.200</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- Teclado Apex 7 -->
                 <div class="swiper-slide product-card h-full" data-brand="steelseries">
                   <div
                     class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
                     <img src="./img/assets/productos/perifericos/tecladosteelseriesapex7.jpg"
                       alt="Teclado SteelSeries Apex 7" class="w-full h-40 object-contain mx-auto">
                     <div class="flex flex-col justify-between flex-grow mt-3">
-                      <p class="text-sm text-gray-700 leading-snug">
-                        Teclado Mecánico SteelSeries Apex 7 — OLED Smart Display / Switch QX2 RED RGB
+                      <h3 class="text-base font-bold text-gray-800 leading-snug">
+                        Teclado Mecánico SteelSeries Apex 7
+                      </h3>
+                      <p class="text-sm text-gray-600 mb-2">
+                        Display OLED. Switch QX2 RED RGB. Base de aluminio.
                       </p>
-                      <span class="text-base font-semibold text-violet-600 mt-3">$180.950</span>
+                      <span class="text-xl font-extrabold text-violet-700 mt-2">$180.950</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- Mouse Aerox 3 Snow -->
                 <div class="swiper-slide product-card h-full" data-brand="steelseries">
                   <div
                     class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
                     <img src="./img/assets/productos/perifericos/mousesteelseriesaerox3.jpg"
                       alt="Mouse SteelSeries Aerox 3 Onyx Snow" class="w-full h-40 object-contain mx-auto">
                     <div class="flex flex-col justify-between flex-grow mt-3">
-                      <p class="text-sm text-gray-700 leading-snug">
-                        Mouse SteelSeries Aerox 3 Onyx Snow Wireless 2.4Ghz Bluetooth Ultra LightWeight
+                      <h3 class="text-base font-bold text-gray-800 leading-snug">
+                        Mouse SteelSeries Aerox 3 Onyx Snow
+                      </h3>
+                      <p class="text-sm text-gray-600 mb-2">
+                        Wireless y Bluetooth. Diseño ultraligero (68g). Iluminación PrismSync.
                       </p>
-                      <span class="text-base font-semibold text-violet-600 mt-3">$110.000</span>
+                      <span class="text-xl font-extrabold text-violet-700 mt-2">$110.000</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- Mouse Aerox 3 Ghost -->
                 <div class="swiper-slide product-card h-full" data-brand="steelseries">
                   <div
                     class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
                     <img src="./img/assets/productos/perifericos/mousesteelseriesaerox3onyx.jpg"
                       alt="Mouse SteelSeries Aerox 3 Onyx Ghost" class="w-full h-40 object-contain mx-auto">
                     <div class="flex flex-col justify-between flex-grow mt-3">
-                      <p class="text-sm text-gray-700 leading-snug">
-                        Mouse SteelSeries Aerox 3 Onyx Ghost Wireless 2.4Ghz Bluetooth Ultra LightWeight
+                      <h3 class="text-base font-bold text-gray-800 leading-snug">
+                        Mouse SteelSeries Aerox 3 Onyx Ghost
+                      </h3>
+                      <p class="text-sm text-gray-600 mb-2">
+                        Wireless y Bluetooth. Ultra ligero 68g. Protección AquaBarrier.
                       </p>
-                      <span class="text-base font-semibold text-violet-600 mt-3">$110.000</span>
+                      <span class="text-xl font-extrabold text-violet-700 mt-2">$110.000</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- ASUS -->
                 <div class="swiper-slide product-card hidden h-full" data-brand="asus">
                   <div
                     class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex items-center justify-center text-center p-4">
-                    <h3 class="text-gray-700 font-semibold">Productos ASUS próximamente</h3>
+                    <h3 class="text-lg font-bold text-gray-700">Productos ASUS próximamente</h3>
                   </div>
                 </div>
 
-                <!-- Logitech -->
-
-                <!-- Volante Logitech G923 -->
-                <div class="swiper-slide product-card hidden" data-brand="logitech">
-                  <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
-                    <img src="./img/assets/productos/logitech-volante-g923.png" alt="Volante Logitech G923"
-                      class="w-full h-48 object-contain p-4">
-                    <div class="p-4">
-                      <h3 class="text-sm font-semibold text-gray-700">Volante Logitech G923 Trueforce Racing</h3>
-                      <p class="text-gray-500 text-xs mb-2">PC/XBOX S/X/One</p>
-                      <span class="text-lg font-bold text-violet-600">$601.150</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Palanca Logitech -->
-                <div class="swiper-slide product-card hidden" data-brand="logitech">
-                  <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
-                    <img src="./img/assets/productos/logitech-palanca.png" alt="Palanca Logitech"
-                      class="w-full h-48 object-contain p-4">
-                    <div class="p-4">
-                      <h3 class="text-sm font-semibold text-gray-700">Palanca Logitech Drive Force Shifter</h3>
-                      <p class="text-gray-500 text-xs mb-2">Para Volantes G923, G29 y G920</p>
-                      <span class="text-lg font-bold text-violet-600">$95.550</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Volante Logitech G923 -->
                 <div class="swiper-slide product-card hidden h-full" data-brand="logitech">
                   <div
                     class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
-                    <img src="./img/assets/productos/logitech-volante-g923.png" alt="Volante Logitech G923"
-                      class="w-full h-40 object-contain mx-auto">
+                    <img src="./img/assets/productos/perifericos/Volante Logitech G923 Trueforce Racing.webp"
+                      alt="Volante Logitech G923" class="w-full h-40 object-contain mx-auto">
                     <div class="flex flex-col justify-between flex-grow mt-3">
-                      <p class="text-sm text-gray-700 leading-snug">
-                        Volante Logitech G923 Trueforce Racing — Compatible con PC, Xbox Series y One
+                      <h3 class="text-base font-bold text-gray-800 leading-snug">
+                        Volante Logitech G923 Trueforce Racing
+                      </h3>
+                      <p class="text-sm text-gray-600 mb-2">
+                        Feedback avanzado Trueforce. Xbox Series X/S y PC.
                       </p>
-                      <span class="text-base font-semibold text-violet-600 mt-3">$601.150</span>
+                      <span class="text-xl font-extrabold text-violet-700 mt-2">$601.150</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- Palanca Logitech -->
                 <div class="swiper-slide product-card hidden h-full" data-brand="logitech">
                   <div
                     class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
-                    <img src="./img/assets/productos/logitech-palanca.png" alt="Palanca Logitech"
-                      class="w-full h-40 object-contain mx-auto">
+                    <img src="./img/assets/productos/perifericos/Palanca Logitech Drive Force Shifter.webp"
+                      alt="Palanca Logitech" class="w-full h-40 object-contain mx-auto">
                     <div class="flex flex-col justify-between flex-grow mt-3">
-                      <p class="text-sm text-gray-700 leading-snug">
-                        Palanca Logitech Drive Force Shifter — Compatible con G923, G29 y G920
+                      <h3 class="text-base font-bold text-gray-800 leading-snug">
+                        Palanca Logitech Drive Force Shifter
+                      </h3>
+                      <p class="text-sm text-gray-600 mb-2">
+                        Caja de cambios de alto rendimiento. Compatible con volantes G923, G29, G920.
                       </p>
-                      <span class="text-base font-semibold text-violet-600 mt-3">$95.550</span>
+                      <span class="text-xl font-extrabold text-violet-700 mt-2">$95.550</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide product-card hidden h-full" data-brand="logitech">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
+                    <img src="./img/assets/productos/perifericos/Volante Logitech G923 Trueforce Racing.webp"
+                      alt="Volante Logitech G923" class="w-full h-40 object-contain mx-auto">
+                    <div class="flex flex-col justify-between flex-grow mt-3">
+                      <h3 class="text-base font-bold text-gray-800 leading-snug">
+                        Volante Logitech G923 Trueforce Racing
+                      </h3>
+                      <p class="text-sm text-gray-600 mb-2">
+                        Feedback avanzado Trueforce. Xbox Series X/S y PC.
+                      </p>
+                      <span class="text-xl font-extrabold text-violet-700 mt-2">$601.150</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide product-card hidden h-full" data-brand="logitech">
+                  <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden h-full flex flex-col p-4 transition hover:shadow-md">
+                    <img src="./img/assets/productos/perifericos/Palanca Logitech Drive Force Shifter.webp"
+                      alt="Palanca Logitech" class="w-full h-40 object-contain mx-auto">
+                    <div class="flex flex-col justify-between flex-grow mt-3">
+                      <h3 class="text-base font-bold text-gray-800 leading-snug">
+                        Palanca Logitech Drive Force Shifter
+                      </h3>
+                      <p class="text-sm text-gray-600 mb-2">
+                        Caja de cambios de alto rendimiento. Compatible con volantes G923, G29, G920.
+                      </p>
+                      <span class="text-xl font-extrabold text-violet-700 mt-2">$95.550</span>
                     </div>
                   </div>
                 </div>
@@ -666,7 +728,7 @@
     </section>
 
     <!-- 3D RTX 5090 -->
-        <section class="bg-gray-900 py-16 overflow-hidden">
+    <section class="bg-gray-900 py-16 overflow-hidden">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-10">
           <p class="text-violet-400 font-semibold uppercase tracking-widest text-sm mb-2">¡Novedad Absoluta!</p>
@@ -674,22 +736,28 @@
             La Potencia del Futuro <span class="text-green-400 block sm:inline-block">RTX 5090</span> Ha Llegado 🚀
           </h2>
           <p class="text-gray-300 text-lg max-w-3xl mx-auto">
-            Sé uno de los primeros en ver el diseño exclusivo de la **GPU más potente** de NVIDIA. Gírala en 360° y descubre cada detalle.
+            Sé uno de los primeros en ver el diseño exclusivo de la **GPU más potente** de NVIDIA. Gírala en 360° y
+            descubre cada detalle.
           </p>
         </div>
 
-        <div class="w-full h-[350px] sm:h-[450px] lg:h-[600px] xl:h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-violet-500/30 border-4 border-violet-700 mx-auto relative">
-          <model-viewer class="w-full h-full" alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="./img/assets/3d/scene.gltf" poster="shared-assets/models/NeilArmstrong.webp" shadow-intensity="1" camera-controls touch-action="pan-y" auto-rotate></model-viewer>
+        <div
+          class="w-full h-[350px] sm:h-[450px] lg:h-[600px] xl:h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-violet-500/30 border-4 border-violet-700 mx-auto relative">
+          <model-viewer class="w-full h-full"
+            alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+            src="./img/assets/3d/scene.gltf" poster="shared-assets/models/NeilArmstrong.webp" shadow-intensity="1"
+            camera-controls touch-action="pan-y" auto-rotate></model-viewer>
         </div>
 
         <div class="mt-12 text-center">
-          <a href="#" class="inline-block bg-violet-600 text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-violet-700 transition duration-300 transform hover:scale-105 shadow-lg shadow-violet-500/50">
+          <a href="#"
+            class="inline-block bg-violet-600 text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-violet-700 transition duration-300 transform hover:scale-105 shadow-lg shadow-violet-500/50">
             ¡Quiero la RTX 5090!
           </a>
         </div>
 
       </div>
-    </section
+    </section>
     <!-- Seccion de Resenias -->
     <section class="bg-[#1e1e1e] text-white py-16 px-6 my-[50px 0]">
       <div class="max-w-6xl mx-auto text-center">
