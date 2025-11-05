@@ -189,77 +189,7 @@
 
     </div>
 
-    <script>
-        const tabs = document.querySelectorAll('#tab-login, #tab-register');
-        const forms = document.querySelectorAll('.auth-form');
-        const title = document.getElementById('auth-title');
-        const subtitle = document.getElementById('auth-subtitle');
-        const switchText = document.getElementById('switch-text');
-
-        const content = {
-            login: {
-                title: 'Inicia Sesión en NEXO',
-                subtitle: 'Accede a tu cuenta y continúa armando tu PC.',
-                switch: '¿No tienes una cuenta? <a href="#" data-target="register" class="toggle-link font-medium text-violet-600 hover:text-violet-500 transition duration-150">Regístrate aquí</a>'
-            },
-            register: {
-                title: 'Crea tu Cuenta NEXO',
-                subtitle: 'Regístrate en segundos y empieza a comprar.',
-                switch: '¿Ya tienes una cuenta? <a href="#" data-target="login" class="toggle-link font-medium text-violet-600 hover:text-violet-500 transition duration-150">Inicia sesión aquí</a>'
-            }
-        };
-
-        function switchForm(target) {
-            // 1. Alternar formularios (visibilidad)
-            forms.forEach(form => {
-                form.style.display = form.id === `form-${target}` ? 'block' : 'none';
-            });
-
-            // 2. Alternar pestañas (estilos)
-            tabs.forEach(tab => {
-                if (tab.dataset.target === target) {
-                    tab.classList.add('text-violet-700', 'border-violet-700');
-                    tab.classList.remove('text-gray-500', 'border-transparent');
-                } else {
-                    tab.classList.remove('text-violet-700', 'border-violet-700');
-                    tab.classList.add('text-gray-500', 'border-transparent');
-                }
-            });
-
-            // 3. Actualizar textos dinámicos
-            title.textContent = content[target].title;
-            subtitle.textContent = content[target].subtitle;
-            switchText.innerHTML = content[target].switch;
-            
-            // Re-agregar event listeners a los nuevos enlaces de switch
-            document.querySelectorAll('.toggle-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    switchForm(e.target.dataset.target);
-                });
-            });
-        }
-
-        // Event listeners para las pestañas
-        tabs.forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                switchForm(e.target.dataset.target);
-            });
-        });
-
-        // Event listeners para el enlace de alternancia inicial
-        document.querySelectorAll('.toggle-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                switchForm(e.target.dataset.target);
-            });
-        });
-
-        // Inicializar al formulario de Login por defecto
-        document.addEventListener('DOMContentLoaded', () => {
-            switchForm('login');
-        });
-
+    <script src="./js/script.js">
     </script>
 
 </body>
