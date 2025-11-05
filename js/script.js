@@ -1,283 +1,313 @@
-/* Menu Hamburguesa */
-const menuBtn = document.getElementById("menu-btn");
-const closeBtn = document.getElementById("close-btn");
-const mobileMenu = document.getElementById("mobile-menu");
-const mobileOverlay = document.getElementById("mobile-overlay"); /* Obtener el overlay para el fondo oscuro */
+/* ================================================================
+SCRIPT UNIFICADO PARA NEXO
+Contiene:
+1. Lógica de Menú Móvil y Mini-Carrito (comparten overlay)
+2. Lógica de Conteo de Productos (¡NUEVA LÓGICA COMPLETA!)
+3. Lógica del Botón "Subir"
+4. Lógica de Swipers (Carruseles) - (Para Index)
+5. Lógica de Filtro de Marcas - (Para Index)
+================================================================
+*/
 
-/* Funcion para abrir el menu */
-const openMobileMenu = () => {
-    mobileMenu.classList.remove("-translate-x-full");
-    mobileMenu.classList.add("translate-x-0");
-    mobileOverlay.classList.remove("hidden"); /* Mostrar el fondo oscuro cuando el menu esta abierto */
-};
+// Almacenará los productos de nuestro carrito
+let cartItems = [];
 
-/* Funcion para cerrar el menu */
-const closeMobileMenu = () => {
-    mobileMenu.classList.remove("translate-x-0");
-    mobileMenu.classList.add("-translate-x-full");
-    mobileOverlay.classList.add("hidden"); /* Ocultar el fondo oscuro al cerrar */
-};
-
-/* Eventos para abrir y cerrar el menu con los botones */
-menuBtn.addEventListener("click", openMobileMenu);
-closeBtn.addEventListener("click", closeMobileMenu);
-
-/* Cerrar el menu si se hace click fuera del menu */
-document.addEventListener("click", (event) => {
-    const isClickInsideMenu = mobileMenu.contains(event.target);
-    const isClickOnMenuButton = menuBtn.contains(event.target);
-
-    /* Si el click no fue dentro del menu ni en el boton y el menu esta abierto, se cierra */
-    if (!isClickInsideMenu && !isClickOnMenuButton && mobileMenu.classList.contains("translate-x-0")) {
-        closeMobileMenu();
-    }
-});
-
-/* Cerrar el menu si se hace click directamente en el overlay */
-mobileOverlay.addEventListener("click", closeMobileMenu);
-
-
-/* Selectores para el Carrito */
-const miniCart = document.getElementById("mini-cart");
-const cartOverlay = document.getElementById("cart-overlay");
-const closeCartBtn = document.getElementById("close-cart-btn");
-const continueShoppingLink = document.getElementById("continue-shopping");
-
-/* Selectores para los botones de apertura del carrito */
-const cartButtons = document.querySelectorAll(
-    '#desktop-cart-btn, #mobile-cart-btn'
-); // Selecciona los botones del carrito por sus nuevos IDs // Selecciona todos los enlaces con el ícono de carrito
-
-/* Funcion para abrir el carrito */
-const openMiniCart = (event) => {
-    event.preventDefault(); // Evita que el enlace # recargue la página
-    miniCart.classList.remove("translate-x-full");
-    miniCart.classList.add("translate-x-0");
-    cartOverlay.classList.remove("hidden");
-    
-    // Asegurar que el menú principal (hamburguesa) esté cerrado
-    closeMobileMenu(); 
-};
-
-/* Funcion para cerrar el carrito */
-const closeMiniCart = () => {
-    miniCart.classList.remove("translate-x-0");
-    miniCart.classList.add("translate-x-full");
-    cartOverlay.classList.add("hidden");
-};
-
-/* Eventos para Abrir */
-cartButtons.forEach(button => {
-    button.addEventListener("click", openMiniCart);
-});
-
-/* Eventos para Cerrar */
-closeCartBtn.addEventListener("click", closeMiniCart);
-cartOverlay.addEventListener("click", closeMiniCart);
-continueShoppingLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    closeMiniCart();
-});
-
-
-/* Boton top scroll */
-
-  const btnSubir = document.getElementById("btnSubir");
-
-  // Mostrar botón cuando se baja un poco
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      btnSubir.classList.remove("hidden");
-      btnSubir.classList.add("flex");
-    } else {
-      btnSubir.classList.remove("flex");
-      btnSubir.classList.add("hidden");
-    }
-  });
-
-  // Volver arriba con animación suave
-  btnSubir.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-
-
-/* Inicializar Swiper para el carrusel de productos destacados */
-document.addEventListener('DOMContentLoaded', function() {
-  const swiper = new Swiper('.featured-carousel', {
-    /* Mostrar 1 slide por vista en mobile */
-    slidesPerView: 1,
-    spaceBetween: 32,
-    breakpoints: {
-      640: { slidesPerView: 2 }, /* En tablet se muestran 2 */
-      1024: { slidesPerView: 3 } /* En desktop se muestran 3 */
-    },
-    
-    /* Loop infinito para que no se termine el carrusel */
-    loop: true,
-    
-    /* Transicion suave entre slides */
-    speed: 500,
-    effect: 'slide',
-    grabCursor: true,
-    
-    /* Flechas personalizadas para navegar */
-    navigation: {
-      nextEl: '.custom-next',
-      prevEl: '.custom-prev',
-    },
-    
-    /* Paginacion con puntos interactivos */
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      dynamicBullets: true,
-    },
-  });
-});
-
-/* Inicializar Swiper para la seccion de productos nuevos */
-const swiperNew = new Swiper('.new-products', {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: '.new-products .swiper-button-next',
-    prevEl: '.new-products .swiper-button-prev',
-  },
-  breakpoints: {
-    640: { slidesPerView: 2 }, /* En tablet muestra 2 productos */
-    1024: { slidesPerView: 4 } /* En desktop muestra 4 productos */
-  }
-});
-
-/* Inicializar Swiper para la seccion de marcas */
-const swiperBrands = new Swiper('.brand-products', {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: '.brand-products .swiper-button-next',
-    prevEl: '.brand-products .swiper-button-prev',
-  },
-  breakpoints: {
-    640: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 }
-  }
-});
-
-/* Variable para almacenar el swiper de marcas y poder reiniciarlo */
-let brandSwiper; 
-
-/* Esperar a que el DOM cargue para manejar el filtrado de marcas */
 document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.brand-button');
-    const productCards = document.querySelectorAll('.product-card');
-    const promoImage = document.querySelector('#brand-promo img');
-    const promoTitle = document.querySelector('#promo-title');
-    /* Seleccionar los botones de navegación del carrusel de marcas */
-    const brandNextButton = document.querySelector('.brand-products .swiper-button-next');
-    const brandPrevButton = document.querySelector('.brand-products .swiper-button-prev');
 
-    /* Datos de cada marca con su imagen y titulo */
-    const promoData = {
-        'steelseries': { 
-            image: './img/assets/promo/steel-series.png', 
-            title: 'STEELSERIES' 
-        },
-        'logitech': { 
-            image: './img/assets/promo/logitech-promo.png', 
-            title: 'LOGITECH' 
-        },
-        'asus': { 
-            image: './img/assets/promo/asus-promo.png', 
-            title: 'ASUS' 
-        },
-        /* Se pueden agregar mas marcas aca */
-    };
+    // --- Selectores del Menú Móvil ---
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
 
-    /* Funcion principal para filtrar los productos por marca */
-    function filterProducts(selectedBrand) {
-        let visibleSlides = 0;
+    // --- Selectores del Botón Subir ---
+    const btnSubir = document.getElementById('btnSubir');
 
-        productCards.forEach(card => {
-            if (card.getAttribute('data-brand') === selectedBrand) {
-                /* Mostrar los productos de la marca seleccionada */
-                card.classList.remove('hidden');
-                visibleSlides++;
-            } else {
-                /* Ocultar los productos de otras marcas */
-                card.classList.add('hidden');
-            }
-        });
+    // --- Selectores del Carrito (Contador) ---
+    const cartCountDesktop = document.getElementById('cart-count-desktop');
+    const cartCountMobile = document.getElementById('cart-count-mobile');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 
-        /* Actualizar imagen y titulo de la promo segun la marca */
-        const data = promoData[selectedBrand];
-        if (data) {
-            promoImage.src = data.image;
-            promoTitle.textContent = data.title;
-        }
-        
-        /* Reiniciar el swiper para que solo muestre los productos visibles */
-        if (brandSwiper) {
-            brandSwiper.destroy(true, true);
-        }
-        
-        brandSwiper = new Swiper('.brand-products', {
-            slidesPerView: 1,
-            spaceBetween: 15,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 3, spaceBetween: 20 },
-            }
-        });
+    // --- Selectores del Mini-Carrito (Panel) ---
+    const miniCart = document.getElementById('mini-cart');
+    const openCartButtons = document.querySelectorAll('.open-cart-btn');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    const continueShoppingBtn = document.getElementById('continue-shopping');
+    
+    // --- NUEVO: Selectores del contenido del carrito ---
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const cartEmptyMsg = document.getElementById('cart-empty-msg');
+    const cartSubtotal = document.getElementById('cart-subtotal');
 
-        const shouldHideArrows = visibleSlides <= 1;
+    // --- 1. LÓGICA DE AÑADIR AL CARRITO (TOTALMENTE NUEVA) ---
 
-        if (brandNextButton && brandPrevButton) {
-            if (shouldHideArrows) {
-                // Ocultar flechas usando una clase de Tailwind
-                brandNextButton.classList.add('hidden');
-                brandPrevButton.classList.add('hidden');
-            } else {
-                // Mostrar flechas
-                brandNextButton.classList.remove('hidden');
-                brandPrevButton.classList.remove('hidden');
-            }
-        }
-
-        /* Cambiar el estilo de los botones segun la marca seleccionada */
-        filterButtons.forEach(btn => {
-            const isSelected = btn.getAttribute('data-brand') === selectedBrand;
-            btn.classList.toggle('bg-violet-600', isSelected);
-            btn.classList.toggle('text-white', isSelected);
-            btn.classList.toggle('border-violet-600', isSelected);
-            btn.classList.toggle('hover:border-violet-600', !isSelected);
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            // 1. Encontrar la tarjeta del producto que fue clickeada
+            const card = event.target.closest('.product-card');
             
-            /* Invertir el color del logo cuando el boton esta activo */
-            const logo = btn.querySelector('img');
-            if (logo) {
-                logo.classList.toggle('brightness-0', isSelected);
-                logo.classList.toggle('invert', isSelected);
-                logo.classList.toggle('filter-none', !isSelected);
-            }
-        });
-    }
+            // 2. Extraer la información usando las clases que agregamos
+            const name = card.querySelector('.product-name').innerText;
+            const priceString = card.querySelector('.product-price').innerText;
+            const imageSrc = card.querySelector('.product-image').src;
 
-    /* Agregar evento click a cada boton de marca */
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedBrand = button.getAttribute('data-brand');
-            filterProducts(selectedBrand);
+            // 3. Limpiar el precio (quitar "$", "." y convertir a número)
+            // Esto convierte "$1.500.000" en el número 1500000
+            const price = parseFloat(priceString.replace('$', '').replace(/\./g, ''));
+
+            // 4. Crear un objeto producto
+            const product = {
+                id: name, // Usamos el nombre como ID único por simplicidad
+                name: name,
+                price: price,
+                image: imageSrc,
+                quantity: 1
+            };
+
+            // 5. Añadir el producto al array `cartItems`
+            addItemToCart(product);
+            
+            // 6. Abrir el panel del carrito
+            openCart();
         });
     });
 
-    /* Cargar por defecto la marca steelseries al iniciar */
-    filterProducts('steelseries'); 
-});
+    function addItemToCart(product) {
+        // Revisar si el item ya existe
+        const existingItem = cartItems.find(item => item.id === product.id);
+
+        if (existingItem) {
+            // Si existe, solo aumenta la cantidad
+            existingItem.quantity++;
+        } else {
+            // Si es nuevo, lo agrega al array
+            cartItems.push(product);
+        }
+
+        // Actualizar todo (la lista de items, el subtotal y los contadores)
+        renderCart();
+    }
+
+    function renderCart() {
+        // Limpiar el contenedor
+        cartItemsContainer.innerHTML = '';
+        
+        if (cartItems.length === 0) {
+            // Si no hay items, mostrar el mensaje de "vacío"
+            if (cartEmptyMsg) cartItemsContainer.appendChild(cartEmptyMsg);
+        } else {
+            // Si hay items, crear el HTML para cada uno
+            cartItems.forEach(item => {
+                const itemHTML = `
+                    <div class="flex items-center gap-4 py-4 border-b border-gray-200">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-md">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm text-gray-800">${item.name}</h4>
+                            <p class="text-xs text-gray-500">Cantidad: ${item.quantity}</p>
+                            <p class="font-bold text-violet-600 text-sm">$${(item.price * item.quantity).toLocaleString('es-AR')}</p>
+                        </div>
+                        </div>
+                `;
+                cartItemsContainer.innerHTML += itemHTML;
+            });
+        }
+        
+        // Actualizar el subtotal y los contadores de burbuja
+        updateCartSubtotal();
+        updateCartCounters();
+    }
+
+    function updateCartSubtotal() {
+        // Sumar el (precio * cantidad) de cada item
+        const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        
+        // Mostrarlo en el HTML, formateado como moneda argentina
+        if (cartSubtotal) cartSubtotal.innerText = `$${total.toLocaleString('es-AR')}`;
+    }
+
+    function updateCartCounters() {
+        // Sumar la cantidad total de items (no de productos distintos)
+        const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+        if (cartCountDesktop) cartCountDesktop.innerText = totalItems;
+        if (cartCountMobile) cartCountMobile.innerText = totalItems;
+    }
+
+
+    // --- 2. LÓGICA DE ABRIR/CERRAR MENÚ Y CARRITO (Sin cambios) ---
+
+    function openCart() {
+        if (miniCart && mobileOverlay) {
+            miniCart.classList.remove('translate-x-full');
+            mobileOverlay.classList.remove('hidden');
+            if (mobileMenu) mobileMenu.classList.add('-translate-x-full');
+        }
+    }
+
+    function closeCart() {
+        if (miniCart && mobileOverlay) {
+            miniCart.classList.add('translate-x-full');
+            if (!mobileMenu || mobileMenu.classList.contains('-translate-x-full')) {
+                mobileOverlay.classList.add('hidden');
+            }
+        }
+    }
+
+    function openMobileMenu() {
+        if (mobileMenu && mobileOverlay) {
+            mobileMenu.classList.remove('-translate-x-full');
+            mobileOverlay.classList.remove('hidden');
+            if (miniCart) miniCart.classList.add('translate-x-full');
+        }
+    }
+    
+    function closeMobileMenu() {
+        if (mobileMenu && mobileOverlay) {
+            mobileMenu.classList.add('-translate-x-full');
+            if (!miniCart || miniCart.classList.contains('translate-x-full')) {
+                mobileOverlay.classList.add('hidden');
+            }
+        }
+    }
+
+    openCartButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            openCart();
+        });
+    });
+
+    if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+    if (continueShoppingBtn) continueShoppingBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeCart();
+    });
+
+    if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+    
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', () => {
+            closeMobileMenu();
+            closeCart(); 
+        });
+    }
+
+    // --- 3. LÓGICA DEL BOTÓN "SUBIR" (Sin cambios) ---
+    if (btnSubir) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                btnSubir.classList.remove("hidden");
+            } else {
+                btnSubir.classList.add("hidden");
+            }
+        });
+        btnSubir.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+
+    // --- 4. LÓGICA DE SWIPERS (Sin cambios) ---
+    
+    if (document.querySelector('.featured-carousel')) {
+        new Swiper('.featured-carousel', {
+            slidesPerView: 1, spaceBetween: 32,
+            breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } },
+            loop: true, speed: 500, effect: 'slide', grabCursor: true,
+            navigation: { nextEl: '.custom-next', prevEl: '.custom-prev' },
+            pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+        });
+    }
+
+    if (document.querySelector('.new-products')) {
+        new Swiper('.new-products', {
+            slidesPerView: 1, spaceBetween: 20, loop: true,
+            navigation: { nextEl: '.new-products .swiper-button-next', prevEl: '.new-products .swiper-button-prev' },
+            breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 4 } }
+        });
+    }
+
+    // --- 5. LÓGICA DE FILTRO DE MARCAS (Sin cambios) ---
+    
+    const filterButtons = document.querySelectorAll('.brand-button');
+    if (filterButtons.length > 0) {
+        let brandSwiper; 
+        const productCards = document.querySelectorAll('.product-card');
+        const promoImage = document.querySelector('#brand-promo img');
+        const promoTitle = document.querySelector('#promo-title');
+        const brandNextButton = document.querySelector('.brand-products .swiper-button-next');
+        const brandPrevButton = document.querySelector('.brand-products .swiper-button-prev');
+
+        const promoData = {
+            'steelseries': { image: './img/assets/promo/steel-series.png', title: 'STEELSERIES' },
+            'logitech': { image: './img/assets/promo/logitech-promo.png', title: 'LOGITECH' },
+            'asus': { image: './img/assets/promo/asus-promo.png', title: 'ASUS' },
+        };
+
+        function filterProducts(selectedBrand) {
+            let visibleSlides = 0;
+            productCards.forEach(card => {
+                if (card.getAttribute('data-brand') === selectedBrand) {
+                    card.classList.remove('hidden');
+                    visibleSlides++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (promoImage && promoTitle) {
+                const data = promoData[selectedBrand];
+                if (data) {
+                    promoImage.src = data.image;
+                    promoTitle.textContent = data.title;
+                }
+            }
+            
+            if (brandSwiper) {
+                brandSwiper.destroy(true, true);
+            }
+            
+            if (document.querySelector('.brand-products')) {
+                brandSwiper = new Swiper('.brand-products', {
+                    slidesPerView: 1, spaceBetween: 15,
+                    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                    breakpoints: { 640: { slidesPerView: 2, spaceBetween: 20 }, 1024: { slidesPerView: 3, spaceBetween: 20 } }
+                });
+            }
+
+            const shouldHideArrows = visibleSlides <= 1;
+            if (brandNextButton && brandPrevButton) {
+                brandNextButton.classList.toggle('hidden', shouldHideArrows);
+                brandPrevButton.classList.toggle('hidden', shouldHideArrows);
+            }
+
+            filterButtons.forEach(btn => {
+                const isSelected = btn.getAttribute('data-brand') === selectedBrand;
+                btn.classList.toggle('bg-violet-600', isSelected);
+                btn.classList.toggle('text-white', isSelected);
+                btn.classList.toggle('border-violet-600', isSelected);
+                btn.classList.toggle('hover:border-violet-600', !isSelected);
+                
+                const logo = btn.querySelector('img');
+                if (logo) {
+                    logo.classList.toggle('brightness-0', isSelected);
+                    logo.classList.toggle('invert', isSelected);
+                    logo.classList.toggle('filter-none', !isSelected);
+                }
+            });
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedBrand = button.getAttribute('data-brand');
+                filterProducts(selectedBrand);
+            });
+        });
+
+        filterProducts('steelseries');
+    }
+
+}); // --- FIN DEL DOMContentLoaded ---
